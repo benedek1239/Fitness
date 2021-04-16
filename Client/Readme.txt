@@ -1,0 +1,1 @@
+The front end of the website, created with JavaScript, HTML, CSS
