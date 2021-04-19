@@ -1,5 +1,6 @@
 body{
-   overflow-x: hidden; 
+    overflow-x: hidden; 
+    font-family: inherit;
 }
 
 .background{
@@ -79,4 +80,23 @@ body{
 
 #user-icon{
     display: none;
+}
+
+.registration-inviter{
+    margin-right: 110px;
+    width: 288px;
+    margin-left: auto;
+    margin-top: 120px;
+    color: white;
+    text-align: center;
+}
+
+.inviter-top-text{
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.inviter-bottom-text{
+    font-size: 13px;
+    margin-bottom: 22px;
 }
