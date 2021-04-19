@@ -1,0 +1,82 @@
+body{
+   overflow-x: hidden; 
+}
+
+.background{
+    background: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+    width: 100%;
+    height: 1300px;
+}
+
+.sign-in-inputs{
+    display: inherit;
+    margin-left: auto;
+    width: fit-content;
+}
+
+.sign-in-input{
+    width: 34%;
+    display: inline;
+}
+
+.user-btn{
+    display: inline !important;
+}
+
+.user-card{
+    color: orange;
+    font-size: 21px;
+}
+
+.black{
+    color: black;
+}
+
+.user-dropdown{
+    display: inline;
+}
+
+.user-inputs{
+    margin-left: auto;
+    width: fit-content;
+}
+
+.menu-button:hover{
+    color: lightgray;
+    border-bottom: 2px solid orange;
+}
+
+.menu-button{
+    color: darkgray;
+    font-size: 20px;
+}
+.user-icon:hover{
+    color: orange;
+}
+.user-icon{
+   cursor: pointer;
+   color: lightgray;
+   font-size: 21px;
+}
+
+#kt_quick_user{
+    height: 320px;
+}
+
+#without-user-navbar{
+    display: none;
+}
+
+#user-client{
+    display: none;
+}
+
+#user-admin{
+    display: none;
+}
+
+#user-icon{
+    display: none;
+}
