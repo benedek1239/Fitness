@@ -29,66 +29,6 @@ body{
     display: inline;
 }
 
-.user-btn{
-    display: inline !important;
-}
-
-.user-card{
-    color: orange;
-    font-size: 21px;
-}
-
-.black{
-    color: black;
-}
-
-.user-dropdown{
-    display: inline;
-}
-
-.user-inputs{
-    margin-left: auto;
-    width: fit-content;
-}
-
-.menu-button:hover{
-    color: lightgray;
-    border-bottom: 2px solid orange;
-}
-
-.menu-button{
-    color: darkgray;
-    font-size: 20px;
-}
-.user-icon:hover{
-    color: orange;
-}
-.user-icon{
-   cursor: pointer;
-   color: lightgray;
-   font-size: 21px;
-}
-
-#kt_quick_user{
-    height: 320px;
-}
-
-#without-user-navbar{
-    display: none;
-}
-
-#user-client{
-    display: none;
-}
-
-#user-admin{
-    display: none;
-}
-
-#user-icon{
-    display: none;
-}
-
 .registration-inviter{
     margin-right: 100px;
     width: 288px;
