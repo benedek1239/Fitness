@@ -1,14 +1,21 @@
 body{
     overflow-x: hidden; 
     font-family: inherit;
+    background: black;
 }
 
 .background{
+    height: 750px;
+    margin-bottom: -750px;
+
+}
+
+.background-img{
+    height: 100%;
+    width: 100%;
     background: url("../images/background.jpg");
     background-repeat: no-repeat;
-    background-size: contain, cover;
-    width: 100%;
-    height: 1300px;
+    background-size: cover;
 }
 
 .sign-in-inputs{
@@ -83,20 +90,61 @@ body{
 }
 
 .registration-inviter{
-    margin-right: 110px;
+    margin-right: 100px;
     width: 288px;
     margin-left: auto;
-    margin-top: 120px;
+    margin-top: 140px;
     color: white;
     text-align: center;
 }
 
 .inviter-top-text{
-    font-size: 27px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .inviter-bottom-text{
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 22px;
+}
+
+.columns{
+    text-align: center;
+    margin-top: 480px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.custom-card{
+    background-color: rgb(34, 34, 34);
+    padding: 35px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.custom-card-icon{
+    font-size: 52px;
+}
+
+.right-side{
+    margin-left: auto;
+    width: fit-content;
+    padding-top: -25px;
+    margin-top: -20px;
+}
+
+.footer{
+    border-top: 1px solid gray;
+    color: white;
+    margin: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.logo{
+    position: absolute;
+    width: 114px;
+    left: 15px;
+    top: 15px;
+    border-radius: 50%;
 }

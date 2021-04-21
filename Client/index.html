@@ -8,105 +8,148 @@
     <link href="assets/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/welcome-screen.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
     <title>Fitness</title>
 </head>
 <body>
-    <div class="top-menu">
+    <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
+        
+        <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5" kt-hidden-height="40" style="">
+            <h3 class="font-weight-bold m-0">Felhasználó adatok</h3>
+            <a href="#" class="btn btn-xs btn-icon btn-light-danger" id="kt_quick_user_close">
+                <i class="ki ki-close icon-xs"></i>
+            </a>
+        </div>
 
-        <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
-            
-			<div class="offcanvas-header d-flex align-items-center justify-content-between pb-5" kt-hidden-height="40" style="">
-				<h3 class="font-weight-bold m-0">Felhasználó adatok</h3>
-				<a href="#" class="btn btn-xs btn-icon btn-light-danger" id="kt_quick_user_close">
-					<i class="ki ki-close icon-xs"></i>
-				</a>
-			</div>
+        <div class="offcanvas-content pr-5 mr-n5 scroll ps ps--active-y" style="height: 616px; overflow: hidden;">
 
-			<div class="offcanvas-content pr-5 mr-n5 scroll ps ps--active-y" style="height: 616px; overflow: hidden;">
-
-				<div class="d-flex align-items-center mt-5">
-					<div class="symbol symbol-100 mr-5">
-						<div class="symbol-label" style="background-image:url('assets/media/users/300_21.jpg')"></div>
-						<i class="symbol-badge bg-success"></i>
-					</div>
-					<div class="d-flex flex-column">
-						<div class="font-weight-bold font-size-h5 text-dark-75">James Jones</div>
-						<div class="text-muted mt-1">Kliens/Admin</div>
-						<div class="navi mt-2">
-							<div class="navi-item">
-								<span class="p-0 pb-2">
-									<span class="mr-1">
-										<span class="svg-icon svg-icon-lg">
-											<i class="fas fa-envelope black"></i>
-										</span>
-									</span>
-									<span class="navi-text text-muted">jm@softplus.com</span>
-								</span>
-							</div>
-							<a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2">Kijelentkezés</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="separator separator-dashed mt-8 mb-5"></div>
-
-				<div class="navi navi-spacer-x-0 p-0">
-					<a href="#" class="navi-item">
-						<div class="navi-link">
-							<div class="symbol symbol-40 mr-3">
-								<div class="symbol-label">
-										<i class="far fa-id-card user-card"></i>
-									</span>
-								</div>
-							</div>
-							<div class="navi-text">
-								<div class="font-weight-bold">Kártyám</div>
-								<div class="text-muted">Kártya adatok
-								<span class="label label-light-danger label-inline font-weight-bold">megtekintése</span></div>
-							</div>
-						</div>
-					</a>
-				</div>
-			<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 616px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div></div></div>
-		</div>
-        <div class="background">
-
-            <div class="form-group sign-in-inputs pt-5" id="without-user-navbar">
-                <input type="email" class="form-control mr-3 sign-in-input" placeholder="E-mail">
-                <input type="password" class="form-control mr-3 sign-in-input" placeholder="Jelszó">
-                <button type="button" class="btn btn-outline-warning">Bejelentkezés</button>
-            </div>
-
-            <div class="user-inputs pt-2">
-                
-                <div id="user-client">
-                    <a class="menu-button mr-6" href="#">Főoldal</a>
-                    <a class="menu-button mr-6" href="#">Terembe lépés</a>
-                    <a class="menu-button mr-6" href="#">Bérleteim</a>
+            <div class="d-flex align-items-center mt-5">
+                <div class="symbol symbol-100 mr-5">
+                    <div class="symbol-label" style="background-image:url('assets/media/users/300_21.jpg')"></div>
+                    <i class="symbol-badge bg-success"></i>
                 </div>
-
-                <div id="user-admin">
-                    <a class="menu-button mr-6" href="#">Főoldal</a>
-                    <a class="menu-button mr-6" href="#">Terem hozzáadása</a>
-                    <a class="menu-button mr-6" href="#">Kliensek</a>
-                </div>
-
-                <div id="user-icon">
-                    <div class="user-dropdown mr-6" id="kt_quick_user_toggle">
-                        <i class="fas fa-user user-icon"></i>
+                <div class="d-flex flex-column">
+                    <div class="font-weight-bold font-size-h5 text-dark-75">James Jones</div>
+                    <div class="text-muted mt-1">Kliens/Admin</div>
+                    <div class="navi mt-2">
+                        <div class="navi-item">
+                            <span class="p-0 pb-2">
+                                <span class="mr-1">
+                                    <span class="svg-icon svg-icon-lg">
+                                        <i class="fas fa-envelope black"></i>
+                                    </span>
+                                </span>
+                                <span class="navi-text text-muted">jm@softplus.com</span>
+                            </span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2">Kijelentkezés</a>
                     </div>
                 </div>
-
-            </div>
-                
-            <div class="registration-inviter">
-                <div class="inviter-top-text">Nem vagy még tag?</div>
-                <div class="inviter-bottom-text">Hozd létrea a fiókodat most</div>
-                <a href="#" class="btn btn-danger btn-shadow font-weight-bold font-size-h3">Regisztráció</a>
             </div>
 
+            <div class="separator separator-dashed mt-8 mb-5"></div>
+
+            <div class="navi navi-spacer-x-0 p-0">
+                <a href="#" class="navi-item">
+                    <div class="navi-link">
+                        <div class="symbol symbol-40 mr-3">
+                            <div class="symbol-label">
+                                    <i class="far fa-id-card user-card"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="navi-text">
+                            <div class="font-weight-bold">Kártyám</div>
+                            <div class="text-muted">Kártya adatok
+                            <span class="label label-light-danger label-inline font-weight-bold">megtekintése</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 616px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div></div></div>
+    </div>
+
+    <img class="logo" src="assets/images/logo.jpg"/>
+
+    <div class="background mg-bottomed">
+        <div class="background-img" ></div>
+
+    </div>
+
+    <div class="form-group sign-in-inputs pt-5" id="without-user-navbar">
+        <input type="email" class="form-control mr-3 sign-in-input" placeholder="E-mail">
+        <input type="password" class="form-control mr-3 sign-in-input" placeholder="Jelszó">
+        <button type="button" class="btn btn-outline-warning">Bejelentkezés</button>
+    </div>
+
+    <div class="user-inputs pt-2">
+        
+        <div id="user-client">
+            <a class="menu-button mr-6" href="#">Főoldal</a>
+            <a class="menu-button mr-6" href="#">Terembe lépés</a>
+            <a class="menu-button mr-6" href="#">Bérleteim</a>
         </div>
+
+        <div id="user-admin">
+            <a class="menu-button mr-6" href="#">Főoldal</a>
+            <a class="menu-button mr-6" href="#">Terem hozzáadása</a>
+            <a class="menu-button mr-6" href="#">Kliensek</a>
+        </div>
+
+        <div id="user-icon">
+            <div class="user-dropdown mr-6" id="kt_quick_user_toggle">
+                <i class="fas fa-user user-icon"></i>
+            </div>
+        </div>
+
+    </div>
+        
+    <div class="registration-inviter">
+        <div class="inviter-top-text">Nem vagy még tag?</div>
+        <div class="inviter-bottom-text">Hozd létrea a fiókodat most</div>
+        <a href="register.html" class="btn btn-danger btn-shadow font-weight-bold font-size-h3">Regisztráció</a>
+    </div>
+
+    <div class="row columns">
+        <div class="col-sm">
+            <div class="custom-card">
+                <i class="fas fa-dumbbell custom-card-icon mb-4"></i>
+                <div class="h1 mb-6">Edzőtermek</div>
+                <div class="h5">A legjobb hely, hogy megtaláld a neked megfelelő edzőtermet</div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="custom-card">
+                <i class="custom-card-icon fas fa-money-bill-alt mb-4"></i>
+                <div class="h1 mb-6">Tulajdonos</div>
+                <div class="h5">Edző terem tulajdonosaként menedzselheted a klienseidet és bérleteiket</div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="custom-card">
+                <i class="custom-card-icon fas fa-running mb-4"></i>
+                <div class="h1 mb-6">Fitness</div>
+                <div class="h5">Az edzés megszervezésének leegyszerüsítése, a felszabadultabb testmozgásért</div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="custom-card">
+                <i class="custom-card-icon fas fa-file-invoice mb-4"></i>
+                <div class="h1 mb-6">Bérletek</div>
+                <div class="h5">Bérlet típusok elkészítése, módosítása és kiosztása az edzőtermekben</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="left-side">
+            <i class="far fa-copyright"></i>
+            Sapientia
+        </div>
+        <div class="right-side">
+            Pataki Norbert, Benedek Szabolcs
+        </div>
+    </div>
 
     </div>
 

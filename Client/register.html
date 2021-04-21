@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/register.css" rel="stylesheet" type="text/css"/>
+
+    <title>Regisztráció</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <img class="logo" src="assets/images/logo.jpg"/>
+            
+            <div class="col-md-8">
+                <div class="card mt-6">
+                    <div class="card-header font-weight-bolder font-size-h3">Regisztráció</div>
+    
+                    <div class="card-body">
+                        <form method="POST" action="https://theride.info/hu/register" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="juDXYF5MQpfHLtgHQENo5ue3O4HbRVV3SFOu9wtl">
+                            <div class="card-body">
+    
+                            <div class="form-group-2">
+                                <label for="name">Név</label>
+                                <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                            </div>
+    
+                            <div class="form-group-2">
+                                <label for="email">E-mail cím</label>
+                                <input id="email-input-field" type="email" class="form-control " name="email" value="" autocomplete="off">
+                            </div>
+
+                            <div class="form-group-2">
+                                <label for="phone">Telefon szám</label>
+                                <input id="phone-input-field" type="text" class="form-control " name="phone" value="" autocomplete="off">
+                            </div>
+    
+                            <div class="form-group-2">
+                                <label for="password">Jelszó</label>
+                                <input id="password-input-field" type="password" class="form-control " name="password" autocomplete="new-password">
+                            </div>
+    
+                            <div class="form-group-2">
+                                <label for="password-confirm">Jelszó újra</label>
+                                <input id="password-confirm-input-field" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                            </div>
+
+                            <div class="form-group-2">
+                                <label>Típus</label>
+                                <div class="radio-inline">
+                                    <label class="radio">
+                                    <input type="radio" name="radios2">
+                                    <span></span>Kliens</label>
+                                    <label class="radio">
+                                    <input type="radio" name="radios2">
+                                    <span></span>Admin</label>
+                                </div>
+                                <span class="form-text text-muted">Válassza ki, hogy milyen felhasználó típust szeretne létrehozni</span>
+                            </div>
+
+                             <!--begin::Nav Panel Widget 1-->
+                            <div class="card card-custom card-stretch gutter-b">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between flex-column pt-4 h-100">
+                                        <div class="pb-5">
+                                            <div class="d-flex flex-column flex-center">
+                                                <div class="symbol symbol-120 symbol-circle symbol-success overflow-hidden">
+                                                    <span class="symbol-label">
+                                                        <img src="https://theride.info/images/avatars/17.svg" class="h-75 align-self-end" id="profile-picture">
+                                                    </span>
+                                                </div>
+                                                <label class="card-title font-weight-bolder text-dark-75 font-size-h4 m-0 pt-7 pb-1">Profilkép</label>
+                                            </div>
+                                            <!--end::Header-->
+    
+                                            <!--begin::Body-->
+                                            <div class="pt-1">
+                                                <div class="avatar-container">
+                                                <div class="choosable-profile" id="avatar-0" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/0.svg" id="0" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-1" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/1.svg" id="1" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-2" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/2.svg" id="2" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-3" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/3.svg" id="3" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-4" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/4.svg" id="4" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-5" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/5.svg" id="5" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-6" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/6.svg" id="6" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-7" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/7.svg" id="7" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-8" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/8.svg" id="8" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-9" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/9.svg" id="9" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-10" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/10.svg" id="10" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-11" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/11.svg" id="11" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-12" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/12.svg" id="12" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-13" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/13.svg" id="13" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-14" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/14.svg" id="14" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-15" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/15.svg" id="15" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-16" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/16.svg" id="16" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile filtered" id="avatar-17" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/17.svg" id="17" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-18" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/18.svg" id="18" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-19" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/19.svg" id="19" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-20" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/20.svg" id="20" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-21" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/21.svg" id="21" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-22" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/22.svg" id="22" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-23" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/23.svg" id="23" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-24" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/24.svg" id="24" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-25" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/25.svg" id="25" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-26" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/26.svg" id="26" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-27" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/27.svg" id="27" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-28" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/28.svg" id="28" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-29" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/29.svg" id="29" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-30" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/30.svg" id="30" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-31" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/31.svg" id="31" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-32" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/32.svg" id="32" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-33" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/33.svg" id="33" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-34" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/34.svg" id="34" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-35" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/35.svg" id="35" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-36" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/36.svg" id="36" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-37" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/37.svg" id="37" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-38" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/38.svg" id="38" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-39" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/39.svg" id="39" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-40" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/40.svg" id="40" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-41" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/41.svg" id="41" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-42" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/42.svg" id="42" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-43" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/43.svg" id="43" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-44" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/44.svg" id="44" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-45" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/45.svg" id="45" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-46" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/46.svg" id="46" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-47" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/47.svg" id="47" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-48" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/48.svg" id="48" class="h-75 align-self-end margined">
+                                                </div>
+                                                                                                <div class="choosable-profile" id="avatar-49" onclick="choosed(this)">
+                                                    <img src="https://theride.info/images/avatars/49.svg" id="49" class="h-75 align-self-end margined">
+                                                </div>
+                                            </div>
+                                    </div>
+                                            <!--end::Body-->
+                                        </div>
+                                        <div class="d-flex flex-center" id="kt_sticky_toolbar_chat_toggler" data-toggle="tooltip" title="" data-placement="right" data-original-title="Chat Example">
+                                            <label class="btn btn-light-warning font-weight-bold mr-2">
+                                                <span><i class="flaticon-attachment"></i>Kép csatolása</span>
+                                                <input type="file" name="media" id="image-input">
+                                            </label>                                   
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+   
+                        <div class="card-footer">
+                            <a href="index.html" class="btn btn-secondary little-margined">Vissza</a>
+                            <button id="register-btn" type="submit" class="btn btn-success mr-2">Regisztráció</button>
+                        </div>
+                        
+                        <input type="text" value="0" name="avatar-counter" id="hidden-avatar-input" hidden="">
+                        
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="left-side">
+            <i class="far fa-copyright text-dark"></i>
+            Sapientia
+        </div>
+        <div class="right-side">
+            Pataki Norbert, Benedek Szabolcs
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('avatar-0').classList.add('filtered');
+    
+        function choosed(clickedAvatar){
+            for(i=0; i<50; ++i){
+                document.getElementById(`avatar-${i}`).classList.remove('filtered');
+            }
+            clickedAvatar.classList.add('filtered');
+            document.getElementById('profile-picture').classList.add('h-75');
+            document.getElementById('profile-picture').classList.remove('attached-img');  
+            document.getElementById('profile-picture').src = clickedAvatar.getElementsByTagName('img')[0].src;
+            document.getElementById('hidden-avatar-input').value = clickedAvatar.getElementsByTagName('img')[0].id;
+            document.getElementById('image-input').value = null;
+        }
+    
+        document.getElementById('image-input').addEventListener('change', ()=>{
+            var file = document.getElementById("image-input").files[0];
+            var reader = new FileReader();
+            reader.onloadend = function(){
+                for(i=0; i<50; ++i){
+                    document.getElementById(`avatar-${i}`).classList.remove('filtered');
+                }
+                document.getElementById('profile-picture').classList.remove('h-75');
+                document.getElementById('profile-picture').classList.add('attached-img');  
+                document.getElementById('profile-picture').src = reader.result;        
+            }
+            if(file){
+                reader.readAsDataURL(file);
+            }
+        });
+    
+            choosed(document.getElementById('avatar-0'));
+    </script>    
+        
+        <style>
+    
+            #kt_footer{
+                width: 100%;
+                margin-top:auto; 
+            }
+            .bg-white{
+                background: none !important;
+            }
+            #ligthed-link{
+                background: none;
+                color: white;
+            }
+            #link-container{
+                background-color: #3F4254;
+            }
+            .whited-style{
+                color: white;
+            }
+        </style>
+    
+    </div>
+
+    </div>
+
+</body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
+    <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    
+    <script src="assets/plugins/global/plugins.bundle.js?v=7.2.6"></script>
+    <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.2.6"></script>
+    <script src="assets/js/scripts.bundle.js?v=7.2.6"></script>
+</html>
