@@ -9,6 +9,7 @@
     <link href="assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/register.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
 
     <title>Regisztráció</title>
 </head>
@@ -55,14 +56,31 @@
                             <div class="form-group-2">
                                 <label>Típus</label>
                                 <div class="radio-inline">
-                                    <label class="radio">
-                                    <input type="radio" name="radios2">
+                                    <label class="radio radio-lg radio-success">
+                                    <input type="radio" name="radios2" id="client-radio">
                                     <span></span>Kliens</label>
-                                    <label class="radio">
-                                    <input type="radio" name="radios2">
+                                    <label class="radio radio-lg radio-success">
+                                    <input type="radio" name="radios2" id="admin-radio">
                                     <span></span>Admin</label>
                                 </div>
                                 <span class="form-text text-muted">Válassza ki, hogy milyen felhasználó típust szeretne létrehozni</span>
+                            </div>
+
+                            <div id="client-user-inputs">
+                                <div class="form-group-2">
+                                    <label for="name">Személyi</label>
+                                    <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                </div>
+    
+                                <div class="form-group-2">
+                                    <label for="name">Cím</label>
+                                    <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                </div>
+    
+                                <div class="form-group-2">
+                                    <label for="name">Vonalkód</label>
+                                    <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                </div>
                             </div>
 
                              <!--begin::Nav Panel Widget 1-->
@@ -263,7 +281,7 @@
 
     <div class="footer">
         <div class="left-side">
-            <i class="far fa-copyright text-dark"></i>
+            <i class="far fa-copyright"></i>
             Sapientia
         </div>
         <div class="right-side">
@@ -305,32 +323,13 @@
             choosed(document.getElementById('avatar-0'));
     </script>    
         
-        <style>
-    
-            #kt_footer{
-                width: 100%;
-                margin-top:auto; 
-            }
-            .bg-white{
-                background: none !important;
-            }
-            #ligthed-link{
-                background: none;
-                color: white;
-            }
-            #link-container{
-                background-color: #3F4254;
-            }
-            .whited-style{
-                color: white;
-            }
-        </style>
     
     </div>
 
     </div>
 
 </body>
+    <script src="assets/js/register.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
     <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    

@@ -1,0 +1,128 @@
+body{
+    overflow-x: hidden; 
+    font-family: inherit;
+    background: black;
+}
+
+.background{
+    height: 750px;
+    margin-bottom: -750px;
+
+}
+
+.background-img{
+    height: 100%;
+    width: 100%;
+    background: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sign-in-inputs{
+    display: inherit;
+    margin-left: auto;
+    width: fit-content;
+}
+
+.sign-in-input{
+    width: 34%;
+    display: inline;
+}
+
+.user-btn{
+    display: inline !important;
+}
+
+.user-card{
+    color: orange;
+    font-size: 21px;
+}
+
+.black{
+    color: black;
+}
+
+.user-dropdown{
+    display: inline;
+}
+
+.user-inputs{
+    margin-left: auto;
+    width: fit-content;
+}
+
+.menu-button:hover{
+    color: lightgray;
+    border-bottom: 2px solid orange;
+}
+
+.menu-button{
+    color: darkgray;
+    font-size: 20px;
+}
+.user-icon:hover{
+    color: orange;
+}
+.user-icon{
+   cursor: pointer;
+   color: lightgray;
+   font-size: 21px;
+}
+
+#kt_quick_user{
+    height: 320px;
+}
+
+#without-user-navbar{
+    display: none;
+}
+
+#user-client{
+    display: none;
+}
+
+#user-admin{
+    display: none;
+}
+
+#user-icon{
+    display: none;
+}
+
+.registration-inviter{
+    margin-right: 100px;
+    width: 288px;
+    margin-left: auto;
+    margin-top: 140px;
+    color: white;
+    text-align: center;
+}
+
+.inviter-top-text{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.inviter-bottom-text{
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.columns{
+    text-align: center;
+    margin-top: 480px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.custom-card{
+    background-color: rgb(34, 34, 34);
+    padding: 35px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.custom-card-icon{
+    font-size: 52px;
+}
+

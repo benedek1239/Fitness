@@ -78,28 +78,10 @@ body{
     object-fit: cover;
 }
 
-.right-side{
-    margin-left: auto;
-    width: fit-content;
-    padding-top: -25px;
-    margin-top: -20px;
+#client-user-inputs{
+    display: none;
 }
 
-.footer{
-    border-top: 1px solid black;
-    color: black;
-    margin: 15px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-}
-
-.logo{
-    position: absolute;
-    width: 114px;
-    left: 15px;
-    top: 15px;
-    border-radius: 50%;
-}
 @media screen and (max-width: 360px) {
     .choosable-profile{
         margin-left: 8px;
