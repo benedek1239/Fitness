@@ -1,0 +1,29 @@
+.main-title{
+    color: orange;
+    font-size: 40px;
+    font-family: auto;
+    font-style: italic;
+    filter: drop-shadow(2px 4px 6px black);
+    font-weight: bold;
+}
+.page-title{
+    margin-top: 100px;
+    border-bottom: 2px solid orange;
+}
+
+.mx-big{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.centered{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#new-room-form{
+    display: none;
+}
+
+.width-50{
+    width: 50px;
+}

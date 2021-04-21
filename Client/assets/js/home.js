@@ -14,6 +14,7 @@ function showMainPageSignedInAdmin(){
     document.getElementById("user-admin-text").style.display = "block";
 }
 
-showMainPageSignedInClient();
+showMainPageSignedInAdmin();
 
 
+ 

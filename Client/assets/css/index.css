@@ -2,6 +2,96 @@ body{
     background: url("../images/background2.jpg");
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: darkorange;
+    border-radius: 10px;
+}
+.sign-in-inputs{
+    display: inherit;
+    margin-left: auto;
+    width: fit-content;
+}
+
+.sign-in-input{
+    width: 34%;
+    display: inline;
+}
+
+.user-btn{
+    display: inline !important;
+}
+
+.user-card{
+    color: orange;
+    font-size: 21px;
+}
+
+
+.user-dropdown{
+    display: inline;
+}
+
+.user-inputs{
+    margin-left: auto;
+    width: fit-content;
+    display: inherit;
+    margin-top: 10px;
+}
+
+.user-icon:hover{
+    color: orange;
+}
+
+.user-icon{
+   cursor: pointer;
+   color: lightgray;
+   font-size: 21px;
+}
+
+#kt_quick_user{
+    height: 320px;
+}
+
+#without-user-navbar{
+    display: none;
+}
+
+.menu-button:hover{
+    color: lightgray;
+    border-bottom: 2px solid orange;
+}
+
+.menu-button{
+    color: darkgray;
+    font-size: 20px;
+}
+
+.user-btn{
+    display: inline !important;
+}
+
+.user-type{
+    margin: auto;
+    font-size: 60px;
+    font-family: auto;
+    font-style: italic;
+    filter: drop-shadow(2px 4px 6px black);
+    font-weight: bold;
+}
+
+.clicked{
+    border-bottom: 2px solid orange;
+}
+
 .footer{
     border-top: 1px solid gray;
     color: white;

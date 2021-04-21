@@ -9,6 +9,7 @@
     <link href="assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/rooms.css" rel="stylesheet" type="text/css"/>
     <title>Fitness</title>
 </head>
 <body>
@@ -73,18 +74,11 @@
 
 
     <div class="user-inputs pt-3">
-        
-        <div id="user-client">
-            <a class="menu-button clicked mr-6" href="home.html">Főoldal</a>
-            <a class="menu-button mr-6 ml-6" href="#">Terembe lépés</a>
-            <a class="menu-button mr-6 ml-6" href="#">Bérleteim</a>
-        </div>
 
-        <div id="user-admin">
-            <a class="menu-button clicked mr-6" href="home.html">Főoldal</a>
-            <a class="menu-button mr-6 ml-6" href="rooms.html">Termek</a>
-            <a class="menu-button mr-6 ml-6" href="#">Kliensek</a>
-        </div>
+
+        <a class="menu-button mr-6" href="home.html">Főoldal</a>
+        <a class="menu-button clicked mr-6 ml-6" href="rooms.html">Termek</a>
+        <a class="menu-button mr-6 ml-6" href="#">Kliensek</a>
 
         <div class="user-dropdown mr-6 mt-1 ml-6" id="kt_quick_user_toggle">
             <i class="fas fa-user user-icon"></i>
@@ -92,9 +86,34 @@
 
     </div>
 
-    <div class="user-type">
-        <div id="user-client-text" class="text-warning">Kliens</div>
-        <div id="user-admin-text" class="text-warning">Admin</div>
+    <div class="container">
+
+        <div class="page-title">
+            <h1 class="main-title d-inline">Edzőtermek</h1>
+            <button class="btn btn-outline-warning d-inline float-right" id="new-room-btn"><i class="fas fa-plus"></i>Terem hozzáadása</button>
+        </div>
+
+        <div class="card card-custom gutter-b mx-big mt-12" id="new-room-form">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3 class="card-label">Új terem hozzáadása</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Terem neve</label>
+                    <input type="text" class="form-control form-control-lg">
+                </div>
+                <button class="btn btn-secondary" id="back-to-rooms-btn">Vissza</button>
+                <button class="btn btn-warning">Hozzáadás</button>
+            </div>
+        </div>
+
+        <div id="all-rooms" class="mb-8">
+
+
+        </div>
+
     </div>
 
     <div class="footer">
@@ -109,7 +128,7 @@
 
 
 </body>
-    <script src="assets/js/home.js"></script>
+    <script type="text/javascript" src="assets/js/rooms.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
     <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    
