@@ -12,25 +12,25 @@ namespace FitnessAPI.Controllers
     public class MemberShipController : ControllerBase
     {
 
-        private IMongoCollection<MemberShip> _shipwreckCollection;
+        private IMongoCollection<MemberShip> _membership;
 
         public MemberShipController(IMongoClient client)
         {
             var database = client.GetDatabase("Fitness");
-            _shipwreckCollection = database.GetCollection<MemberShip>("membership");
+            _membership = database.GetCollection<MemberShip>("membership");
         }
 
         [HttpGet]
         public IEnumerable<MemberShip> Get()
         {
-            return _shipwreckCollection.Find(el => true).ToList();
+            return _membership.Find(el => true).ToList();
 
         }
 
         [HttpGet("{id}")]
         public IEnumerable<MemberShip> Get(string id)
         {
-            var idk = _shipwreckCollection.Find(el => el.Id == id).ToList();
+            var idk = _membership.Find(el => el.Id == id).ToList();
             return idk;
 
         }
@@ -38,10 +38,11 @@ namespace FitnessAPI.Controllers
         [HttpPost]
         public IEnumerable<MemberShip> Create([FromBody] MemberShip shipwreck)
         {
-            _shipwreckCollection.InsertOne(shipwreck);
-           var idk = _shipwreckCollection.Find(el => el.Id == shipwreck.Id).ToList();
+            _membership.InsertOne(shipwreck);
+           var idk = _membership.Find(el => el.Id == shipwreck.Id).ToList();
 
             return idk;
         }
+
     }
 }

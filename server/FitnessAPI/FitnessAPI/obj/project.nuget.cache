@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MOaBCczvmEK6XSClw6Tw/+vRm9cOPkM1nGT8j5EeVvkc/EcdwVfnM1ZpqWLg/hq1PJIHpOnVrCs11ELFJEzjqw==",
+  "dgSpecHash": "+oXK1CU0vKAJC/ucHECmGY+/azSky0Vwld92duaTO1kxgJIeM+706D7LgjnD+ZDsRVmLvKxFFxxZGCvUituAOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\norbe\\Desktop\\NegyedEv\\dot_NET\\FitnessAPI\\server\\FitnessAPI\\FitnessAPI\\FitnessAPI.csproj",
   "expectedPackageFiles": [
@@ -13,10 +13,10 @@
     "C:\\Users\\norbe\\.nuget\\packages\\mongodb.driver.core\\2.12.2\\mongodb.driver.core.2.12.2.nupkg.sha512",
     "C:\\Users\\norbe\\.nuget\\packages\\mongodb.libmongocrypt\\1.2.1\\mongodb.libmongocrypt.1.2.1.nupkg.sha512",
     "C:\\Users\\norbe\\.nuget\\packages\\sharpcompress\\0.23.0\\sharpcompress.0.23.0.nupkg.sha512",
-    "C:\\Users\\norbe\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "C:\\Users\\norbe\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "C:\\Users\\norbe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "C:\\Users\\norbe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "C:\\Users\\norbe\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.3\\swashbuckle.aspnetcore.6.1.3.nupkg.sha512",
+    "C:\\Users\\norbe\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.3\\swashbuckle.aspnetcore.swagger.6.1.3.nupkg.sha512",
+    "C:\\Users\\norbe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.3\\swashbuckle.aspnetcore.swaggergen.6.1.3.nupkg.sha512",
+    "C:\\Users\\norbe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.1.3\\swashbuckle.aspnetcore.swaggerui.6.1.3.nupkg.sha512",
     "C:\\Users\\norbe\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\norbe\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "C:\\Users\\norbe\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512"
