@@ -23,7 +23,14 @@ namespace FitnessAPI.Controllers
         [HttpGet]
         public IEnumerable<TrainingRoom> Get()
         {
-            return _trainingRoomColletion.Find(el => true).ToList();
+            return _trainingRoomColletion.Find(el => el.IsDeleted == "false").ToList();
+        }
+
+        [HttpGet("{id}")]
+        public IEnumerable<TrainingRoom> Get(string  id)
+        {
+            var result = _trainingRoomColletion.Find(el => el.Id == id).ToList();
+            return result;
         }
 
         [HttpPost]
@@ -33,6 +40,13 @@ namespace FitnessAPI.Controllers
             _trainingRoomColletion.InsertOne(trainingRoom);
             var result = _trainingRoomColletion.Find(el => el.Id == trainingRoom.Id).ToList();
             return result;
+        }
+
+        [HttpPut("{id}")]
+        public IEnumerable<TrainingRoom>  Delete(string id, TrainingRoom trainingRoom)
+        {
+            _trainingRoomColletion.ReplaceOne(el => el.Id == id, trainingRoom);
+            return null;
         }
     }
 }
