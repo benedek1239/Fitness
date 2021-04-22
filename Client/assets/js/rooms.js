@@ -17,22 +17,58 @@ myObj = {
 }
 
 function loadRooms(){
-    for(i in myObj.rooms){
-        var card = document.createElement("div");
-        card.classList = "card card-custom col-lg-8 centered mt-8 py-5";
-        card.innerHTML = `<div class="card-header">
-                            <div class="card-title">
-                                <span class="card-icon">
-                                    <img src="assets/images/room.jpg" class="width-50 h-90 align-self-center">
-                                </span>
-                                <h3 class="card-label">${myObj.rooms[i]}</h3>
-                            </div>
-                            <div class="card-toolbar">
-                                <button class="btn btn-danger">Bérletek</button>
-                            </div>
-                        </div>`;
-        document.getElementById('all-rooms').appendChild(card);
-    }
+    fetch("http://localhost:5000/TrainingRoom")
+      .then((response) => 
+            response.json()
+        )
+      .then((data) => {
+        for(i = data.length - 1; i >= 0; i--){
+            var card = document.createElement("div");
+            card.classList = "card card-custom col-lg-8 centered mt-8 py-5";
+            card.innerHTML = `<div class="card-header">
+                                <div class="card-title">
+                                    <span class="card-icon">
+                                        <img src="assets/images/room.jpg" class="width-50 h-90 align-self-center">
+                                    </span>
+                                    <h3 class="card-label">${data[i].roomName}</h3>
+                                </div>
+                                <div class="card-toolbar">
+                                    <button class="btn btn-warning mr-6">Bérletek</button>
+                                    <button class="btn btn-danger">Törlés</button>
+                                </div>
+                            </div>`;
+            document.getElementById('all-rooms').appendChild(card);
+        }
+      });
+
+    
 }
 
 loadRooms();
+
+
+document.getElementById("add-new-room").addEventListener("click", () => {
+    const data = {
+        roomName: `${document.getElementById("room-name-input").value}`,
+        IsDeleted: "false",
+    };
+    
+    fetch("http://localhost:5000/TrainingRoom", {
+        method: "POST", // or 'PUT'
+        mode: "cors",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Success:", data);
+            location.reload();
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+});
+    
+
