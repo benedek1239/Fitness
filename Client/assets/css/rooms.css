@@ -27,3 +27,11 @@
 .width-50{
     width: 50px;
 }
+
+#top-up-back{
+    z-index: -1;
+}
+
+#new-ticket-form{
+    display: none;
+}

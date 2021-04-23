@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/rooms.css" rel="stylesheet" type="text/css"/>
+
+    <title>Fitness</title>
+</head>
+<body>
+    <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
+        
+        <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5" kt-hidden-height="40" style="">
+            <h3 class="font-weight-bold m-0">Felhasználó adatok</h3>
+            <a href="#" class="btn btn-xs btn-icon btn-light-danger" id="kt_quick_user_close">
+                <i class="ki ki-close icon-xs"></i>
+            </a>
+        </div>
+
+        <div class="offcanvas-content pr-5 mr-n5 scroll ps ps--active-y" style="height: 616px; overflow: hidden;">
+
+            <div class="d-flex align-items-center mt-5">
+                <div class="symbol symbol-100 mr-5">
+                    <img class="symbol-label" src="https://theride.info/images/avatars/0.svg"></img>
+                    <i class="symbol-badge bg-success"></i>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="font-weight-bold font-size-h5 text-dark-75">James Jones</div>
+                    <div class="text-muted mt-1">Kliens/Admin</div>
+                    <div class="navi mt-2">
+                        <div class="navi-item">
+                            <span class="p-0 pb-2">
+                                <span class="mr-1">
+                                    <span class="svg-icon svg-icon-lg">
+                                        <i class="fas fa-envelope text-dark"></i>
+                                    </span>
+                                </span>
+                                <span class="navi-text text-muted">jm@softplus.com</span>
+                            </span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2">Kijelentkezés</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separator separator-dashed mt-8 mb-5"></div>
+
+            <div class="navi navi-spacer-x-0 p-0">
+                <a href="#" class="navi-item">
+                    <div class="navi-link">
+                        <div class="symbol symbol-40 mr-3">
+                            <div class="symbol-label">
+                                    <i class="far fa-id-card user-card"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="navi-text">
+                            <div class="font-weight-bold">Kártyám</div>
+                            <div class="text-muted">Kártya adatok
+                            <span class="label label-light-danger label-inline font-weight-bold">megtekintése</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 616px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div></div></div>
+    </div>
+
+    <img class="logo" src="assets/images/logo.jpg"/>
+
+
+    <div class="user-inputs pt-3">
+        
+        <div id="user-client">
+            <a class="menu-button mr-6" href="home.html">Főoldal</a>
+            <a class="menu-button mr-6 ml-6" href="#">Terembe lépés</a>
+            <a class="menu-button mr-6 ml-6" href="#">Bérleteim</a>
+        </div>
+
+        <div id="user-admin">
+            <a class="menu-button mr-6" href="home.html">Főoldal</a>
+            <a class="menu-button mr-6 ml-6" href="rooms.html">Termek</a>
+            <a class="menu-button mr-6 ml-6" href="#">Kliensek</a>
+        </div>
+
+        <div class="user-dropdown mr-6 mt-1 ml-6" id="kt_quick_user_toggle">
+            <i class="fas fa-user user-icon"></i>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="card card-custom mt-35" id="tickets">
+            <div class="card-header">
+                <div class="card-title">
+                    <span class="card-icon">
+                        <img src="assets/images/room.jpg" class="width-50 h-90 align-self-center"/>
+                    </span>
+                    <h3 class="card-label" id="training-room-name"></h3>
+                </div>
+                <div class="card-toolbar">
+                    <a id="add-new-ticket-button" class="btn btn-sm btn-warning font-weight-bold font-size-lg">
+                    <i class="flaticon2-plus mr-2"></i>Új bértlet hozzáadása</a>
+                </div>
+            </div>
+            <div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
+            <div class="card-footer d-flex justify-content-between">
+                <a href="rooms.html" class="btn btn-light-danger font-weight-bold">Vissza</a>
+            </div>
+        </div>
+
+        <div class="card card-custom mt-35" id="new-ticket-form">
+            <div class="card-header">
+                <div class="card-title">
+                    <span class="card-icon">
+                        <img src="assets/images/ticket.png" class="width-50 h-90 align-self-center"/>
+                    </span>
+                    <h3 class="card-label" id="training-room-name">Új bérlet típus hozzáadása</h3>
+                </div>
+                <div class="card-toolbar">
+                    <button class="btn btn-light-danger font-weight-bold" id="close-new-ticket-form">Vissza</button>
+                </div>
+            </div>
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <label>Megnevezése</label>
+                            <input type="text" class="form-control" autocomplete="off" id="ticket-type">
+                            <span class="invalid-feedback" role="alert">
+                                <strong>A megnevezés legalább 5 karakterből kell álljon</strong>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Ára (Ron)</label>
+                            <input type="number" class="form-control" autocomplete="off" id="ticket-price">
+                            <span class="invalid-feedback" role="alert">
+                                <strong>Az ár egy pozitív egész szám kell legyen</strong>
+                            </span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <label>Hány órától</label>
+                                    <div></div>
+                                    <select class="custom-select form-control" id="ticket-from-when">
+                                        <option value="06" selected="selected">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <label>Hány óráig</label>
+                                    <div></div>
+                                    <select class="custom-select form-control" id="ticket-until-when">
+                                        <option value="06" selected="selected">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <label>Hány napig érvényes</label>
+                            <div></div>
+                            <select class="custom-select form-control" id="ticket-lastingInDay">
+                                <option value="10" selected="selected">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="60">60</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Hány alkalommal használható</label>
+                            <div></div>
+                            <select class="custom-select form-control" id="ticket-entriesNumber">
+                                <option value="10" selected="selected">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
+                                <option value="60">60</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Naponta hány belépés engedélyezett</label>
+                            <div></div>
+                            <select class="custom-select form-control" id="ticket-dailyEntries">
+                                <option value="1" selected="selected">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+                <button class="btn font-size-h6 btn-warning centered d-block" id="create-new-ticket-btn">Létrehozás</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <div class="left-side">
+            <i class="far fa-copyright"></i>
+            Sapientia
+        </div>
+        <div class="right-side">
+            Pataki Norbert, Benedek Szabolcs
+        </div>
+    </div>
+
+
+</body>
+    <script src="assets/js/tickets.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
+    <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    
+    <script src="assets/plugins/global/plugins.bundle.js?v=7.2.6"></script>
+    <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.2.6"></script>
+    <script src="assets/js/scripts.bundle.js?v=7.2.6"></script>
+</html>
