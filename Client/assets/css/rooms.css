@@ -28,6 +28,29 @@
     width: 50px;
 }
 
+.width-65{
+    width: 65px;
+}
+
+.custom-btn-padding{
+    padding: 4px;
+    padding-left: 7px;
+    padding-right: 2px;
+    padding-bottom: 0px;
+}
+
+.custom-card{
+    padding: 16px;
+    border: 0.8px solid black;
+}
+
+.ticket-function-btns{
+    position: absolute;
+    display: inline;
+    top: 33px;
+    right: 22px;
+    width: fit-content;
+}
 #top-up-back{
     z-index: -1;
 }

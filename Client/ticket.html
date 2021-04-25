@@ -10,6 +10,7 @@
     <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/rooms.css" rel="stylesheet" type="text/css"/>
+
     <title>Fitness</title>
 </head>
 <body>
@@ -72,28 +73,19 @@
 
     <img class="logo" src="assets/images/logo.jpg"/>
 
-    <div class="swal2-container swal2-center swal2-backdrop-hide" id="top-up-back" style="overflow-y: auto;">
-        <div aria-labelledby="swal2-title" aria-describedby="swal2-content" class="swal2-popup swal2-modal swal2-icon-warning swal2-hide" id="top-up" tabindex="-1" role="dialog" aria-live="assertive" aria-modal="true" style="display: flex;">
-            <div class="swal2-header">
-                <div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;">
-                    <div class="swal2-icon-content">!</div>
-                </div>
-                <h2 class="swal2-title" id="swal2-title" style="display: block;">Biztos törlöd az edzőtermet?</h2>
-            </div>
-            <div class="swal2-content">
-
-            <div class="swal2-range" style="display: none;">
-                <input type="range"><output></output></div></div><div class="swal2-actions">
-                    <button type="button" class="swal2-cancel swal2-styled" aria-label="" style="display: inline-block;" onclick="hideTopUp()">Mégsem</button>
-                    <button type="button" class="swal2-confirm swal2-styled" aria-label="" style="display: inline-block;" onclick="deleteSelectedTrainingRoom()">Igen</button><div class="swal2-loader"></div></div><div class="swal2-footer" style="display: none;"></div></div>
-    </div>
-
     <div class="user-inputs pt-3">
+        
+        <div id="user-client">
+            <a class="menu-button mr-6" href="home.html">Főoldal</a>
+            <a class="menu-button mr-6 ml-6" href="#">Terembe lépés</a>
+            <a class="menu-button mr-6 ml-6" href="#">Bérleteim</a>
+        </div>
 
-
-        <a class="menu-button mr-6" href="home.html">Főoldal</a>
-        <a class="menu-button clicked mr-6 ml-6" href="rooms.html">Termek</a>
-        <a class="menu-button mr-6 ml-6" href="#">Kliensek</a>
+        <div id="user-admin">
+            <a class="menu-button mr-6" href="home.html">Főoldal</a>
+            <a class="menu-button mr-6 ml-6" href="rooms.html">Termek</a>
+            <a class="menu-button mr-6 ml-6" href="#">Kliensek</a>
+        </div>
 
         <div class="user-dropdown mr-6 mt-1 ml-6" id="kt_quick_user_toggle">
             <i class="fas fa-user user-icon"></i>
@@ -103,33 +95,48 @@
 
     <div class="container">
 
-        <div class="page-title">
-            <h1 class="main-title d-inline">Edzőtermek</h1>
-            <button class="btn btn-outline-warning d-inline float-right" id="new-room-btn"><i class="fas fa-plus"></i>Terem hozzáadása</button>
-        </div>
-
-        <div class="card card-custom gutter-b mx-big mt-12" id="new-room-form">
+        <div class="card card-custom mt-35" >
             <div class="card-header">
                 <div class="card-title">
-                    <h3 class="card-label">Új terem hozzáadása</h3>
+                    <span class="card-icon">
+                        <img src="assets/images/ticket.png" class="width-50 h-90 align-self-center"/>
+                    </span>
+                    <h3 class="card-label" id="ticket-name"></h3>
+                </div>
+                <div class="card-toolbar">
+                    <button class="btn btn-light-danger font-weight-bold" id="admin-back-btn" onclick="backToTickets()">Vissza</button>
                 </div>
             </div>
+
             <div class="card-body">
-                <div class="form-group">
-                    <label>Terem neve</label>
-                    <input type="text" class="form-control form-control-lg" id="room-name-input" autocomplete="off">
+                
+                <div class="row mx-10">
+                    <div class="col-sm">
+
+                        <h4 class="my-8" id="ticket-price"></h4>
+
+                        <h4 class="my-8" id="ticket-from-when"></h4>
+
+                        <h4 class="my-8" id="ticket-until-when"></h4>
+
+                    </div>
+
+                    <div class="col-sm">
+
+                        <h4 class="my-8" id="ticket-lastingInDay"></h4>
+
+                        <h4 class="my-8" id="ticket-entriesNumber"></h4>
+
+                        <h4 class="my-8" id="ticket-dailyEntries"></h4>
+
+                    </div>
                 </div>
-                <button class="btn btn-secondary" id="back-to-rooms-btn">Vissza</button>
-                <button class="btn btn-warning" id="add-new-room">Hozzáadás</button>
+
             </div>
-        </div>
-
-        <div id="all-rooms" class="mb-8">
-
-
         </div>
 
     </div>
+
 
     <div class="footer">
         <div class="left-side">
@@ -143,7 +150,8 @@
 
 
 </body>
-    <script type="text/javascript" src="assets/js/rooms.js"></script>
+    <script src="assets/js/ticket.js"></script>
+    <script src="assets/js/home.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
     <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    

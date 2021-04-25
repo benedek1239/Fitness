@@ -73,6 +73,21 @@
 
     <img class="logo" src="assets/images/logo.jpg"/>
 
+    <div class="swal2-container swal2-center swal2-backdrop-hide" id="top-up-back" style="overflow-y: auto;">
+        <div aria-labelledby="swal2-title" aria-describedby="swal2-content" class="swal2-popup swal2-modal swal2-icon-warning swal2-hide" id="top-up" tabindex="-1" role="dialog" aria-live="assertive" aria-modal="true" style="display: flex;">
+            <div class="swal2-header">
+                <div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;">
+                    <div class="swal2-icon-content">!</div>
+                </div>
+                <h2 class="swal2-title" id="swal2-title" style="display: block;">Biztos törlöd a bérletet?</h2>
+            </div>
+            <div class="swal2-content">
+
+            <div class="swal2-range" style="display: none;">
+                <input type="range"><output></output></div></div><div class="swal2-actions">
+                    <button type="button" class="swal2-cancel swal2-styled" aria-label="" style="display: inline-block;" onclick="hideTopUp()">Mégsem</button>
+                    <button type="button" class="swal2-confirm swal2-styled" aria-label="" style="display: inline-block;" onclick="deleteTicket()">Igen</button><div class="swal2-loader"></div></div><div class="swal2-footer" style="display: none;"></div></div>
+    </div>
 
     <div class="user-inputs pt-3">
         
@@ -96,7 +111,7 @@
 
     <div class="container">
 
-        <div class="card card-custom mt-35" id="tickets">
+        <div class="card card-custom mt-35 mb-10" id="tickets">
             <div class="card-header">
                 <div class="card-title">
                     <span class="card-icon">
@@ -109,7 +124,9 @@
                     <i class="flaticon2-plus mr-2"></i>Új bértlet hozzáadása</a>
                 </div>
             </div>
-            <div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
+            <div class="card-body" id="main-tickets-form">
+
+            </div>
             <div class="card-footer d-flex justify-content-between">
                 <a href="rooms.html" class="btn btn-light-danger font-weight-bold">Vissza</a>
             </div>
@@ -121,7 +138,7 @@
                     <span class="card-icon">
                         <img src="assets/images/ticket.png" class="width-50 h-90 align-self-center"/>
                     </span>
-                    <h3 class="card-label" id="training-room-name">Új bérlet típus hozzáadása</h3>
+                    <h3 class="card-label" id="ticket-name"></h3>
                 </div>
                 <div class="card-toolbar">
                     <button class="btn btn-light-danger font-weight-bold" id="close-new-ticket-form">Vissza</button>
