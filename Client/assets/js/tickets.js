@@ -54,7 +54,11 @@ document.getElementById('close-new-ticket-form').addEventListener('click', ()=>{
 
 //Load the trainingRooms from database
 function loadTickets(){
-    fetch("http://localhost:5000/MemberShip")
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const trainingRoomId = urlParams.get('roomId')
+
+    fetch(`http://localhost:5000/MemberShip/${trainingRoomId}/${true}`)
         .then((response) => 
             response.json()
         )

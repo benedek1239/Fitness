@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/rooms.css" rel="stylesheet" type="text/css"/>
+    <title>Fitness</title>
+</head>
+<body>
+    <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
+        
+        <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5" kt-hidden-height="40" style="">
+            <h3 class="font-weight-bold m-0">Felhasználó adatok</h3>
+            <a href="#" class="btn btn-xs btn-icon btn-light-danger" id="kt_quick_user_close">
+                <i class="ki ki-close icon-xs"></i>
+            </a>
+        </div>
+
+        <div class="offcanvas-content pr-5 mr-n5 scroll ps ps--active-y" style="height: 616px; overflow: hidden;">
+
+            <div class="d-flex align-items-center mt-5">
+                <div class="symbol symbol-100 mr-5">
+                    <img class="symbol-label" src="https://theride.info/images/avatars/0.svg"></img>
+                    <i class="symbol-badge bg-success"></i>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="font-weight-bold font-size-h5 text-dark-75">James Jones</div>
+                    <div class="text-muted mt-1">Kliens/Admin</div>
+                    <div class="navi mt-2">
+                        <div class="navi-item">
+                            <span class="p-0 pb-2">
+                                <span class="mr-1">
+                                    <span class="svg-icon svg-icon-lg">
+                                        <i class="fas fa-envelope text-dark"></i>
+                                    </span>
+                                </span>
+                                <span class="navi-text text-muted">jm@softplus.com</span>
+                            </span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2">Kijelentkezés</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separator separator-dashed mt-8 mb-5"></div>
+
+            <div class="navi navi-spacer-x-0 p-0">
+                <a href="#" class="navi-item">
+                    <div class="navi-link">
+                        <div class="symbol symbol-40 mr-3">
+                            <div class="symbol-label">
+                                    <i class="far fa-id-card user-card"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="navi-text">
+                            <div class="font-weight-bold">Kártyám</div>
+                            <div class="text-muted">Kártya adatok
+                            <span class="label label-light-danger label-inline font-weight-bold">megtekintése</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 616px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div></div></div>
+    </div>
+
+    <img class="logo" src="assets/images/logo.jpg"/>
+
+
+    <div class="user-inputs pt-3">
+        
+        <div id="user-admin">
+            <a class="menu-button mr-6" href="home.html">Főoldal</a>
+            <a class="menu-button mr-6 ml-6" href="rooms.html">Termek</a>
+            <a class="menu-button clicked mr-6 ml-6" href="clients.html">Kliensek</a>
+        </div>
+
+        <div class="user-dropdown mr-6 mt-1 ml-6" id="kt_quick_user_toggle">
+            <i class="fas fa-user user-icon"></i>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="page-title">
+            <h1 class="main-title d-inline">Kliensek</h1>
+            <button class="btn btn-outline-warning d-inline float-right" id="new-room-btn"><i class="fas fa-plus"></i>Kliens hozzáadása</button>
+        </div>
+
+        <div class="card card-custom mt-5">
+
+            <div class="card-body">
+
+                <div class="mb-7">
+                    <div class="row align-items-center">
+                        <div class="col-lg-9 col-xl-8">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 my-2 my-md-0">
+                                    <div class="input-icon">
+                                        <input type="text" class="form-control" placeholder="Keresés..." id="kt_datatable_search_query">
+                                        <span>
+                                            <i class="flaticon2-search-1 text-muted"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 my-2 my-md-0">
+                                    <a href="#" class="btn btn-light-primary px-6 font-weight-bold">Mehet</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded">
+                    <table class="datatable-table" style="display: block;">
+
+                        <thead class="datatable-head">
+                            <tr class="datatable-row" style="left: 0px;">
+                                <th class="datatable-cell datatable-toggle-detail"><span></span></th>
+                                <th data-field="Név" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 108px;">Név</span>
+                                </th>
+                                <th data-field="Telefon" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 100px;">Telefon</span>
+                                </th>
+                                <th data-field="Email" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 138px;">Email</span>
+                                </th>
+                                <th data-field="Személyi" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 108px;">Személyi</span>
+                                </th>
+                                <th data-field="Cím" class="datatable-cell datatable-cell-sort" style="display: none;">
+                                    <span style="width: 108px;">Cím</span>
+                                </th>
+                                <th data-field="Vonalkód" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 100px;">Vonalkód</span>
+                                </th>
+                                <th data-field="Megjegyzések" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 120px;">Megjegyzések</span>
+                                </th>
+                                <th data-field="Actions" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 125px;">Műveletek</span>
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="datatable-body">
+                            
+                            <tr data-row="0" class="datatable-row" style="left: 0px;">
+                                <td class="datatable-cell datatable-toggle-detail">
+                                    <i class="fa fa-caret-right"></i>
+                                </td>
+                                <td data-field="Név" class="datatable-cell">
+                                    <span style="width: 108px;"></span>Nagy Annamária</span>
+                                </td>
+                                <td data-field="Telefon" class="datatable-cell">
+                                    <span style="width: 100px;">0740395761</span>
+                                </td>
+                                <td data-field="Email" class="datatable-cell">
+                                    <span style="width: 138px;">annamari@gmail.com</span>
+                                </td>
+                                <td data-field="Személyi" aria-label="10/15/2017" class="datatable-cell">
+                                    <span style="width: 108px;">199821574235</span>
+                                </td>
+                                <td data-field="Cím" aria-label="5" class="datatable-cell" style="display: none;">
+                                    <span style="width: 108px;">Bethlen Gábor 16</span>
+                                </td>
+                                <td data-field="Vonalkód" data-autohide-disabled="false" aria-label="1" class="datatable-cell">
+                                    <span style="width: 100px;">#7454</span>
+                                </td>
+                                <th data-field="Megjegyzések" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 120px;">Sokat jön-megy</span>
+                                </th>
+                                <td data-field="Actions" data-autohide-disabled="false" aria-label="null" class="datatable-cell">
+                                    <span style="overflow: visible; position: relative; width: 125px;">                        
+                                        <div class="dropdown dropdown-inline">                            
+                                            <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" data-toggle="dropdown">
+                                                <span class="svg-icon svg-icon-md">                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                            <rect x="0" y="0" width="24" height="24"></rect>                                            <path d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z" fill="#000000"></path>                                        </g>                                    
+                                                </svg>                                </span>                            
+                                            </a>                            
+                            
+                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">
+                                            <span class="svg-icon svg-icon-md">                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                        <rect x="0" y="0" width="24" height="24"></rect>                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "></path>                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"></rect>                                    </g>                                </svg>                            </span>                        
+                                        </a> 
+
+                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                                            <span class="svg-icon svg-icon-md">                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                        <rect x="0" y="0" width="24" height="24"></rect>                                        <path d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z" fill="#000000" fill-rule="nonzero"></path>                                        <path d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"></path>                                    </g>                                </svg>                            </span>                        
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr data-row="1" class="datatable-row" style="left: 0px;">
+                                <td class="datatable-cell datatable-toggle-detail">
+                                    <i class="fa fa-caret-right"></i>
+                                </td>
+                                <td data-field="Név" class="datatable-cell">
+                                    <span style="width: 108px;"></span>Nagy Annamária</span>
+                                </td>
+                                <td data-field="Telefon" class="datatable-cell">
+                                    <span style="width: 100px;">0740395761</span>
+                                </td>
+                                <td data-field="Email" class="datatable-cell">
+                                    <span style="width: 138px;">annamari@gmail.com</span>
+                                </td>
+                                <td data-field="Személyi" aria-label="10/15/2017" class="datatable-cell">
+                                    <span style="width: 108px;">199821574235</span>
+                                </td>
+                                <td data-field="Cím" aria-label="5" class="datatable-cell" style="display: none;">
+                                    <span style="width: 108px;">Bethlen Gábor 16</span>
+                                </td>
+                                <td data-field="Vonalkód" data-autohide-disabled="false" aria-label="1" class="datatable-cell">
+                                    <span style="width: 100px;">#7454</span>
+                                </td>
+                                <th data-field="Megjegyzések" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort">
+                                    <span style="width: 120px;">Sokat jön-megy</span>
+                                </th>
+                                <td data-field="Actions" data-autohide-disabled="false" aria-label="null" class="datatable-cell">
+                                    <span style="overflow: visible; position: relative; width: 125px;">                        
+                                        <div class="dropdown dropdown-inline">                            
+                                            <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" data-toggle="dropdown">
+                                                <span class="svg-icon svg-icon-md">                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                            <rect x="0" y="0" width="24" height="24"></rect>                                            <path d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z" fill="#000000"></path>                                        </g>                                    
+                                                </svg>                                </span>                            
+                                            </a>                            
+                            
+                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">
+                                            <span class="svg-icon svg-icon-md">                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                        <rect x="0" y="0" width="24" height="24"></rect>                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "></path>                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"></rect>                                    </g>                                </svg>                            </span>                        
+                                        </a> 
+
+                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                                            <span class="svg-icon svg-icon-md">                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                        <rect x="0" y="0" width="24" height="24"></rect>                                        <path d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z" fill="#000000" fill-rule="nonzero"></path>                                        <path d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"></path>                                    </g>                                </svg>                            </span>                        
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="left-side">
+            <i class="far fa-copyright"></i>
+            Sapientia
+        </div>
+        <div class="right-side">
+            Pataki Norbert, Benedek Szabolcs
+        </div>
+    </div>
+
+
+</body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="assets/js/pages/crud/ktdatatable/base/data-json.js?v=7.2.7"></script>
+    <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
+    <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    
+    <script src="assets/plugins/global/plugins.bundle.js?v=7.2.6"></script>
+    <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.2.6"></script>
+    <script src="assets/js/scripts.bundle.js?v=7.2.6"></script>
+</html>
