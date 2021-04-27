@@ -10,7 +10,6 @@
     <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/rooms.css" rel="stylesheet" type="text/css"/>
-
     <title>Fitness</title>
 </head>
 <body>
@@ -73,19 +72,12 @@
 
     <img class="logo" src="assets/images/logo.jpg"/>
 
+
     <div class="user-inputs pt-3">
         
-        <div id="user-client">
-            <a class="menu-button mr-6" href="home.html">Főoldal</a>
-            <a class="menu-button mr-6 ml-6" href="#">Terembe lépés</a>
-            <a class="menu-button mr-6 ml-6" href="entrances.html">Belépéseim</a>
-        </div>
-
-        <div id="user-admin">
-            <a class="menu-button mr-6" href="home.html">Főoldal</a>
-            <a class="menu-button clicked mr-6 ml-6" href="rooms.html">Termek</a>
-            <a class="menu-button mr-6 ml-6" href="clients.html">Kliensek</a>
-        </div>
+        <a class="menu-button mr-6" href="home.html">Főoldal</a>
+        <a class="menu-button mr-6 ml-6" href="#">Terembe lépés</a>
+        <a class="menu-button clicked mr-6 ml-6" href="entrances.html">Belépéseim</a>
 
         <div class="user-dropdown mr-6 mt-1 ml-6" id="kt_quick_user_toggle">
             <i class="fas fa-user user-icon"></i>
@@ -95,47 +87,48 @@
 
     <div class="container">
 
-        <div class="card card-custom mt-35" >
-            <div class="card-header">
-                <div class="card-title">
-                    <span class="card-icon">
-                        <img src="assets/images/ticket.png" class="width-50 h-90 align-self-center"/>
-                    </span>
-                    <h3 class="card-label" id="ticket-name"></h3>
+        <div class="page-title">
+            <h1 class="main-title d-inline">Elöző belépéseim</h1>
+        </div>
+
+        <div id="user-entrances">
+
+            <div class="card card-custom col-lg-8 centered mt-8">.
+                <div class="card-header">
+                    <div class="card-title">
+                        Power Huni GYM
+                    </div>
+    
+                    <div class="card-toolbar">
+                        <img class="width-50" src="assets/images/entrance.png">
+                    </div>
                 </div>
-                <div class="card-toolbar">
-                    <button class="btn btn-light-danger font-weight-bold" id="admin-back-btn" onclick="backToTickets()">Vissza</button>
+                <div class="card-body">
+                    <h4>Bérlet: VIP excluseive</h3>
+                    <h4>Dátum: 2020.02.07</h3>
                 </div>
             </div>
 
-            <div class="card-body">
-                
-                <div class="row mx-10">
-                    <div class="col-sm">
-
-                        <h4 class="my-8" id="ticket-price"></h4>
-
-                        <h4 class="my-8" id="ticket-from-when"></h4>
-
-                        <h4 class="my-8" id="ticket-until-when"></h4>
-
+            <div class="card card-custom col-lg-8 centered mt-8">.
+                <div class="card-header">
+                    <div class="card-title">
+                        Power Huni GYM
                     </div>
-
-                    <div class="col-sm">
-
-                        <h4 class="my-8" id="ticket-lastingInDay"></h4>
-
-                        <h4 class="my-8" id="ticket-entriesNumber"></h4>
-
-                        <h4 class="my-8" id="ticket-dailyEntries"></h4>
-
+    
+                    <div class="card-toolbar">
+                        <img class="width-50" src="assets/images/entrance.png">
                     </div>
                 </div>
-
+                <div class="card-body">
+                    <h4>Bérlet: VIP excluseive</h3>
+                    <h4>Dátum: 2020.02.07</h3>
+                </div>
             </div>
+
         </div>
 
     </div>
+
 
 
     <div class="footer">
@@ -150,8 +143,6 @@
 
 
 </body>
-    <script src="assets/js/ticket.js"></script>
-    <script src="assets/js/home.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
     <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    
