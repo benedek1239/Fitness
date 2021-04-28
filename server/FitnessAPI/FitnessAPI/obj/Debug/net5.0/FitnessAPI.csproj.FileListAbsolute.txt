@@ -80,3 +80,10 @@ C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\
 C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\obj\Debug\net5.0\ref\FitnessAPI.dll
 C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\obj\Debug\net5.0\FitnessAPI.pdb
 C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\obj\Debug\net5.0\FitnessAPI.genruntimeconfig.cache
+C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\norbe\Desktop\NegyedEv\dot_NET\FitnessAPI\server\FitnessAPI\FitnessAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
