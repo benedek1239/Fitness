@@ -23,8 +23,7 @@ namespace FitnessAPI.Controllers
         [HttpGet]
         public IEnumerable<MemberShip> Get()
         {
-            return _membership.Find(el => true).ToList();
-
+            return _membership.Find(el => el.IsDeleted == "false").ToList();
         }
 
         [HttpGet("{id}")]
@@ -35,13 +34,27 @@ namespace FitnessAPI.Controllers
 
         }
 
+        [HttpGet("{roomId}/{isAdmin}")]
+        public IEnumerable<MemberShip> Get(string roomId, bool isAdmin)
+        {
+            var idk = _membership.Find(el => el.RoomId == roomId && el.IsDeleted == "false").ToList();
+            return idk;
+        }
+
         [HttpPost]
         public IEnumerable<MemberShip> Create([FromBody] MemberShip shipwreck)
         {
             _membership.InsertOne(shipwreck);
-           var idk = _membership.Find(el => el.Id == shipwreck.Id).ToList();
+            var idk = _membership.Find(el => el.Id == shipwreck.Id).ToList();
 
             return idk;
+        }
+
+        [HttpPut("{id}")]
+        public IEnumerable<MemberShip> Delete(string id, MemberShip memberShip)
+        {
+            _membership.ReplaceOne(el => el.Id == id, memberShip);
+            return null;
         }
 
     }
