@@ -117,3 +117,7 @@ body{
     top: 15px;
     border-radius: 50%;
 }
+
+.custom-mg-top{
+    margin-top: -15px;
+}

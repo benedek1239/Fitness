@@ -9,6 +9,8 @@
     <link href="assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/entranceToGym.css" rel="stylesheet" type="text/css"/>
+
     <title>Fitness</title>
 </head>
 <body>
@@ -69,35 +71,84 @@
         <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 616px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div></div></div>
     </div>
 
-    <img class="logo" src="assets/images/logo.jpg"/>
+    <img class="logo z-5" src="assets/images/logo.jpg"/>
 
 
-    <div class="user-inputs pt-3">
+    <div class="user-inputs pt-3 z-5">
         
-        <div id="user-client">
-            <a class="menu-button clicked mr-6" href="home.html">Főoldal</a>
-            <a class="menu-button mr-6 ml-6" href="entranceToGym.html">Terembe lépés</a>
-            <a class="menu-button mr-6 ml-6" href="entrances.html">Belépéseim</a>
-        </div>
+        <a class="menu-button mr-6" href="home.html">Főoldal</a>
+        <a class="menu-button clicked mr-6 ml-6" href="entranceToGym.html">Terembe lépés</a>
+        <a class="menu-button mr-6 ml-6" href="entrances.html">Belépéseim</a>
 
-        <div id="user-admin">
-            <a class="menu-button clicked mr-6" href="home.html">Főoldal</a>
-            <a class="menu-button mr-6 ml-6" href="rooms.html">Termek</a>
-            <a class="menu-button mr-6 ml-6" href="clients.html">Kliensek</a>
-        </div>
 
         <div class="user-dropdown mr-6 mt-1 ml-6" id="kt_quick_user_toggle">
             <i class="fas fa-user user-icon"></i>
         </div>
 
     </div>
+    
 
-    <div class="user-type">
-        <div id="user-client-text" class="text-warning">Kliens</div>
-        <div id="user-admin-text" class="text-warning">Admin</div>
+    <div class="background">
+        <div class="background-img" ></div>
     </div>
 
-    <div class="footer">
+            
+    <div class="registration-inviter z-5">
+        <div class="inviter-top-text mb-5">Épp belépsz a terembe?</div>
+        <button class="btn btn-warning btn-shadow font-weight-bold font-size-h3" data-toggle="modal" data-target="#exampleModalLong">Belépés</button>
+    </div>
+
+    <div class="container">
+
+        <!-- Modal-->
+        <div class="modal fade" id="exampleModalLong" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="choose-model-title">Terem kiválasztása</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i aria-hidden="true" class="ki ki-close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div id="choosable-gyms">
+                            <div class="card mx-8 custom-card mt-6" onclick="chooseGym(this)">
+                                <h2 class="font-weight-bold"><img src="assets/images/room.png" class="width-65 mr-6"/>Power Huni Gym</h2>
+                            </div>
+                            <div class="card mx-8 custom-card mt-6" onclick="chooseGym(this)">
+                                <h2 class="font-weight-bold"><img src="assets/images/room.png" class="width-65 mr-6"/>Fitness Arena</h2>
+                            </div>
+                            <div class="card mx-8 custom-card mt-6" onclick="chooseGym(this)">
+                                <h2 class="font-weight-bold"><img src="assets/images/room.png" class="width-65 mr-6"/>Big muscles GYM</h2>
+                            </div>
+                        </div>
+
+                        <div id="choosable-tickets">
+                            <div class="card mx-8 custom-card mt-6" onclick="chooseTicket(this)">
+                                <h2 class="font-weight-bold"><img src="assets/images/ticket.png" class="width-65 mr-6"/>10 napos</h2>
+                            </div>
+                            <div class="card mx-8 custom-card mt-6" onclick="chooseTicket(this)">
+                                <h2 class="font-weight-bold"><img src="assets/images/ticket.png" class="width-65 mr-6"/>30 napos</h2>
+                            </div>
+                            <div class="card mx-8 custom-card mt-6" onclick="chooseTicket(this)">
+                                <h2 class="font-weight-bold"><img src="assets/images/ticket.png" class="width-65 mr-6"/>VIP exclusive</h2>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-danger font-weight-bold" data-dismiss="modal">Mégse</button>
+                        <button type="button" class="btn btn-warning font-weight-bold" id="next-on-rooms-btn">Tovább</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer z-5">
         <div class="left-side">
             <i class="far fa-copyright"></i>
             Sapientia
@@ -109,8 +160,7 @@
 
 
 </body>
-    <script src="assets/js/welcome.js"></script>
-    <script src="assets/js/home.js"></script>
+    <script type="text/javascript" src="assets/js/entranceToGym.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
     <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    

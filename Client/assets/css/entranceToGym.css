@@ -1,0 +1,62 @@
+.background-img{
+    height: 100%;
+    width: 100%;
+    background: url("../images/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background{
+    height: 730px;
+    margin-bottom: -350px;
+    margin-top: -59px;
+    z-index: 1;
+}
+
+.z-5{
+    z-index: 5;
+}
+
+.registration-inviter{
+    margin-right: 100px; 
+    width: 385px;
+    margin-left: auto;
+    color: #FFA800;
+    text-align: center;
+    margin-right: auto;
+    margin-top: -163px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+}
+
+.inviter-top-text{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.inviter-bottom-text{
+    font-size: 14px;
+    margin-bottom: 122px;
+}
+
+.choosed{
+    border: 1.5px solid orange !important;
+}
+
+.custom-card{
+    cursor: pointer;
+    padding: 10px;
+    border: 1.5px solid black;
+}
+
+.width-50{
+    width: 50px;
+}
+
+.width-65{
+    width: 65px;
+}
+
+#choosable-tickets{
+    display: none;
+}

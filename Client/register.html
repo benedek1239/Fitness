@@ -28,27 +28,42 @@
     
                             <div class="form-group-2">
                                 <label for="name">Név</label>
-                                <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                <input id="name-input" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>A névnek legalább 5 karakterből kell állnia</strong>
+                                </span>
                             </div>
     
                             <div class="form-group-2">
                                 <label for="email">E-mail cím</label>
-                                <input id="email-input-field" type="email" class="form-control " name="email" value="" autocomplete="off">
+                                <input id="email-input" type="email" class="form-control " name="email" value="" autocomplete="off">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>E-mail cím nem megfelelő</strong>
+                                </span>
                             </div>
 
                             <div class="form-group-2">
                                 <label for="phone">Telefon szám</label>
-                                <input id="phone-input-field" type="text" class="form-control " name="phone" value="" autocomplete="off">
+                                <input id="phone-input" type="text" class="form-control " name="phone" value="" autocomplete="off">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>A telefonszámnak legalább 7 karakterből kell állnia</strong>
+                                </span>
                             </div>
     
                             <div class="form-group-2">
                                 <label for="password">Jelszó</label>
-                                <input id="password-input-field" type="password" class="form-control " name="password" autocomplete="new-password">
+                                <input id="password-input" type="password" class="form-control " name="password" autocomplete="new-password">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>A jelszónak legalább 5 karakterből kell állnia</strong>
+                                </span>
                             </div>
     
                             <div class="form-group-2">
                                 <label for="password-confirm">Jelszó újra</label>
-                                <input id="password-confirm-input-field" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                <input id="password-confirm-input" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>A megadott jelszavak nem eggyeznek</strong>
+                                </span>
                             </div>
 
                             <div class="form-group-2">
@@ -57,27 +72,39 @@
                                     <label class="radio radio-lg radio-success">
                                     <input type="radio" name="radios2" id="client-radio">
                                     <span></span>Kliens</label>
-                                    <label class="radio radio-lg radio-success">
+                                    <label class="radio radio-lg radio-success" id="type-radios">
                                     <input type="radio" name="radios2" id="admin-radio">
                                     <span></span>Admin</label>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>Nem választott felhasználó típust</strong>
+                                    </span>
                                 </div>
                                 <span class="form-text text-muted">Válassza ki, hogy milyen felhasználó típust szeretne létrehozni</span>
                             </div>
 
                             <div id="client-user-inputs">
                                 <div class="form-group-2">
-                                    <label for="name">Személyi</label>
-                                    <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                    <label for="cnp">Személyi</label>
+                                    <input id="cnp-input" type="text" class="form-control " name="cnp" value="" autocomplete="off" autofocus="">
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>A személyinek legalább 5 karakterből kell állnia</strong>
+                                    </span>
                                 </div>
     
                                 <div class="form-group-2">
-                                    <label for="name">Cím</label>
-                                    <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                    <label for="address">Cím</label>
+                                    <input id="address-input" type="text" class="form-control " name="address" value="" autocomplete="off" autofocus="">
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>A címnek legalább 7 karakterből kell állnia</strong>
+                                    </span>
                                 </div>
     
                                 <div class="form-group-2">
-                                    <label for="name">Vonalkód</label>
-                                    <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                    <label for="barcode">Vonalkód</label>
+                                    <input id="barcode-input" type="text" class="form-control " name="barcode" value="" autocomplete="off" autofocus="">
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>A vonalkódnak legalább 5 karakterből kell állnia</strong>
+                                    </span>
                                 </div>
                             </div>
 
