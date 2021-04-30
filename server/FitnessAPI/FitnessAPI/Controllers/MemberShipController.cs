@@ -1,4 +1,5 @@
-﻿using FitnessAPI.Models;
+﻿using FitnessAPI.Authentication;
+using FitnessAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using System.Collections.Generic;
@@ -50,11 +51,19 @@ namespace FitnessAPI.Controllers
             return idk;
         }
 
-        [HttpPut("{id}")]
-        public IEnumerable<MemberShip> Delete(string id, MemberShip memberShip)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(string id)
         {
-            _membership.ReplaceOne(el => el.Id == id, memberShip);
-            return null;
+            var result = _membership.Find(el => el.Id == id).ToList();
+            if (result.Count < 0)
+            {
+                return StatusCode(404, new Response { Status = "Not Found or Error", Message = "Membership not found" });
+            }
+            var filter = Builders<MemberShip>.Filter.Eq("Id", id);
+            var update = Builders<MemberShip>.Update.Set("IsDeleted", "true");
+            _membership.UpdateOne(filter, update);
+
+            return Ok();
         }
 
     }
