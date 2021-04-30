@@ -43,13 +43,9 @@ namespace FitnessAPI.Controllers
                 return Unauthorized();
             }
 
-            var combined = new List<string>()
-            {
-                token,
-                loginModel.UserEmail
-            };
+            var result = new Result { Token = token, Id = resultUser[0].Id, Email = resultUser[0].UserEmail, UserName = resultUser[0].UserName, Type = resultUser[0].Type };
 
-            return Ok(combined);
+            return Ok(result);
 
         }
 
@@ -58,12 +54,12 @@ namespace FitnessAPI.Controllers
         public IActionResult Register([FromBody] User registerModel)
         {
             var resultUser = _user.Find(el => el.UserEmail == registerModel.UserEmail).ToList();
-            if (resultUser.Count == 0)
+            if (resultUser.Count > 0)
             {
                 return StatusCode(500, new Response { Status = "Error", Message = "User already exists" });
             }
 
-            registerModel.InsertedDate = DateTime.UtcNow.ToString();
+            
             _user.InsertOne(registerModel);
 
             var token = jwTAuthenticationManager.Authenticate(registerModel.UserEmail, registerModel.Password);
@@ -72,13 +68,9 @@ namespace FitnessAPI.Controllers
                 return Unauthorized();
             }
 
-            var combined = new List<string>()
-            {
-                token,
-                registerModel.UserEmail
-            };
+            var result = new Result { Token = token, Id = registerModel.Id, Email = registerModel.UserEmail, UserName = registerModel.UserName, Type = registerModel.Type };
 
-            return Ok(combined);
+            return Ok(result);
 
         }
     }
