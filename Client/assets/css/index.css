@@ -109,6 +109,12 @@ body{
     margin-top: -20px;
 }
 
+.custom-feedback{
+    width: fit-content;
+    position: absolute;
+    top: 50px;
+    margin-left: 5px;
+}
 
 .logo{
     position: absolute;

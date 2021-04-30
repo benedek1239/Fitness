@@ -10,7 +10,13 @@ function showMainPageSignedInAdmin(){
     document.getElementById("user-admin").style.display = "inline";
 }
 
-showMainPageSignedInAdmin();
+//get the user data
+userData = JSON.parse(localStorage.getItem('profile'));
 
-
- 
+//show the right menus, depends on the user type
+if(userData.type == 'admin'){
+    showMainPageSignedInAdmin();
+}
+else{
+    showMainPageSignedInClient();
+}

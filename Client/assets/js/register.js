@@ -17,7 +17,59 @@ function register(){
     //let s front end variate the form
     if(validation()){
         //everithing is okey
-        console.log('registered');
+
+        //get current date
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+        //get user type 
+        var type = '';
+        if(document.getElementById('client-radio').checked){
+            type = 'client';
+        }
+        else{
+            type = 'admin'
+        }
+
+
+        const data = {
+            userName: `${document.getElementById("name-input").value}`,
+            phoneNumber: `${document.getElementById("phone-input").value}`,
+            userEmail: `${document.getElementById("email-input").value}`,
+            IsDeleted: "false",
+            insertedDate: `${date}`,
+            cnp: `${document.getElementById("cnp-input").value}`,
+            address: `${document.getElementById("address-input").value}`,
+            barcode: `${document.getElementById("barcode-input").value}`,
+            password: `${document.getElementById("password-input").value}`,
+            type: `${type}`,
+            comment: '',
+        };
+
+        //Fetch the data
+        fetch("http://localhost:5000/register", {
+             method: "POST",
+             mode: "cors",
+             headers: {
+                 "Content-Type": "application/json",
+             },
+             body: JSON.stringify(data),
+         })
+             .then((response) => response.json())
+             .then((data) => {
+                if(data.status == 'Error'){
+                    document.getElementById('email-already-used-input').classList.add('is-invalid');
+                    //we have an error, let s scroll to the top
+                    window.scrollTo(0,0);
+                }
+                else{
+                    localStorage.setItem('profile', JSON.stringify({ ...data }));
+                    window.location.href = "home.html";
+                }
+            })
+             .catch((error) => {
+                 console.error("Error:", error);
+            });
     }
     else{
         //we have an error, let s scroll to the top
@@ -27,6 +79,9 @@ function register(){
 
 //validate the register form on front end 
 function validation(){
+    //Just in case :)))
+    document.getElementById('email-already-used-input').classList.remove('is-invalid');
+
     //variable to check if there are errors or at least one error
     isError = false;
 

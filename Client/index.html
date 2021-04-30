@@ -22,9 +22,12 @@
     </div>
 
     <div class="form-group sign-in-inputs pt-5">
-        <input type="email" class="form-control mr-3 sign-in-input" placeholder="E-mail">
-        <input type="password" class="form-control mr-3 sign-in-input" placeholder="Jelszó">
-        <button type="button" class="btn btn-outline-warning">Bejelentkezés</button>
+        <input type="email" class="form-control mr-3 sign-in-input" placeholder="E-mail" id="email-input">
+        <input type="password" class="form-control mr-3 sign-in-input" placeholder="Jelszó" id="password-input">
+        <span class="invalid-feedback custom-feedback" role="alert">
+            <strong>Helytelen e-mail vagy jelszó</strong>
+        </span>
+        <button type="button" class="btn btn-outline-warning" onclick="signIn()">Bejelentkezés</button>
     </div>
 
         
@@ -76,6 +79,7 @@
     </div>
 
 </body>
+    <script type="text/javascript" src="assets/js/index.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
     <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>    

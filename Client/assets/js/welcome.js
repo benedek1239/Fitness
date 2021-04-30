@@ -10,4 +10,13 @@ function showCenterTextAdmin(){
     document.getElementById("user-admin-text").style.display = "block";
 }
 
-showCenterTextAdmin();
+//get the user data
+userData = JSON.parse(localStorage.getItem('profile'));
+
+//show the right center text, depends on the user type
+if(userData.type == 'admin'){
+    showCenterTextAdmin();
+}
+else{
+    showCenterTextClient();
+}

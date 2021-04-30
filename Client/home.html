@@ -29,8 +29,8 @@
                     <i class="symbol-badge bg-success"></i>
                 </div>
                 <div class="d-flex flex-column">
-                    <div class="font-weight-bold font-size-h5 text-dark-75">James Jones</div>
-                    <div class="text-muted mt-1">Kliens/Admin</div>
+                    <div class="font-weight-bold font-size-h5 text-dark-75" id="user-planel-name"></div>
+                    <div class="text-muted mt-1" id="user-planel-type"></div>
                     <div class="navi mt-2">
                         <div class="navi-item">
                             <span class="p-0 pb-2">
@@ -39,10 +39,10 @@
                                         <i class="fas fa-envelope text-dark"></i>
                                     </span>
                                 </span>
-                                <span class="navi-text text-muted">jm@softplus.com</span>
+                                <span class="navi-text text-muted" id="user-planel-email"></span>
                             </span>
                         </div>
-                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2">Kijelentkezés</a>
+                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2" onclick="signOut()">Kijelentkezés</a>
                     </div>
                 </div>
             </div>
@@ -109,6 +109,7 @@
 
 
 </body>
+    <script type="text/javascript" src="assets/js/user.js"></script>
     <script src="assets/js/welcome.js"></script>
     <script src="assets/js/home.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>

@@ -106,7 +106,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="choose-model-title">Terem kiválasztása</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="exitFromTheForm()">
                             <i aria-hidden="true" class="ki ki-close"></i>
                         </button>
                     </div>
@@ -136,11 +136,18 @@
                             </div>
                         </div>
 
+                        <div id="ending-form">
+                            <h3><p class="d-inline font-weight-bolder">Terem:</p> <p class="d-inline" id="ending-room-name">Power Huni GYM</p></h3>
+                            <h3><p class="d-inline font-weight-bolder">Bérlet:</p> <p class="d-inline" id="ending-ticket-name">30 napos</p></h3>
+                        </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-light-danger font-weight-bold" data-dismiss="modal">Mégse</button>
-                        <button type="button" class="btn btn-warning font-weight-bold" id="next-on-rooms-btn">Tovább</button>
+                        <button type="button" class="btn btn-light-danger font-weight-bold" data-dismiss="modal" id="dont-btn" onclick="exitFromTheForm()">Mégse</button>
+                        <button type="button" class="btn btn-light-danger font-weight-bold" onclick="backToRooms()" id="back-btn">Vissza</button>
+                        <button type="button" class="btn btn-light-danger font-weight-bold" onclick="backToTickets()" id="back-2-btn">Vissza</button>
+
+                        <button type="button" class="btn btn-warning font-weight-bold" id="next-btn" onclick="roomIsChoosed()">Tovább</button>
                     </div>
                 </div>
             </div>
@@ -160,6 +167,7 @@
 
 
 </body>
+    <script type="text/javascript" src="assets/js/user.js"></script>
     <script type="text/javascript" src="assets/js/entranceToGym.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>

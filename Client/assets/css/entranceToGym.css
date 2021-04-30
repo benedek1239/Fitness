@@ -40,7 +40,13 @@
 }
 
 .choosed{
-    border: 1.5px solid orange !important;
+    filter: drop-shadow(1px 2px 3px black);
+    background: aliceblue
+}
+
+.custom-card:hover{
+    background: aliceblue
+
 }
 
 .custom-card{
@@ -58,5 +64,17 @@
 }
 
 #choosable-tickets{
+    display: none;
+}
+
+#ending-form{
+    display: none;
+}
+
+#back-btn{
+    display: none;
+}
+
+#back-2-btn{
     display: none;
 }
