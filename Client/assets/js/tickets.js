@@ -57,7 +57,7 @@ function loadTickets(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const trainingRoomId = urlParams.get('roomId')
-
+	
     fetch(`http://localhost:5000/MemberShip/${trainingRoomId}/${true}`)
         .then((response) => 
             response.json()
@@ -283,25 +283,9 @@ function deleteTicket(){
     )
     .then((data) => {
 
-        const getedData = {
-            id: `${data[0].id}`,
-            type: `${data[0].type}`,
-            price: `${data[0].price}`,
-            lastingInDay: `${data[0].lastingInDay}`,
-            entriesNumber: `${data[0].entriesNumber}`,
-            IsDeleted: "true",
-            roomId: `${data[0].roomId}`,
-            fromUntill: `${data[0].fromUntill}`,
-            dailyEntries: `${data[0].dailyEntries}`,
-        };
-    
         fetch(`http://localhost:5000/MemberShip/${data[0].id}`, {
-            method: "PUT",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(getedData),
+            method: "DELETE",
+            mode: "cors"
         })
         setTimeout(()=>{
             location.reload();

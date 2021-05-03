@@ -10,6 +10,7 @@
     <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
     <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/rooms.css" rel="stylesheet" type="text/css"/>
+	<link rel="shortcut icon" type="image/jpg" href="assets/images/logo.jpg"/>
 
     <title>Fitness</title>
 </head>
@@ -27,12 +28,12 @@
 
             <div class="d-flex align-items-center mt-5">
                 <div class="symbol symbol-100 mr-5">
-                    <img class="symbol-label" src="https://theride.info/images/avatars/0.svg"></img>
+                    <img class="symbol-label" id="user-planel-img" src="https://theride.info/images/avatars/0.svg"></img>
                     <i class="symbol-badge bg-success"></i>
                 </div>
                 <div class="d-flex flex-column">
-                    <div class="font-weight-bold font-size-h5 text-dark-75">James Jones</div>
-                    <div class="text-muted mt-1">Kliens/Admin</div>
+                    <div class="font-weight-bold font-size-h5 text-dark-75" id="user-planel-name"></div>
+                    <div class="text-muted mt-1" id="user-planel-type"></div>
                     <div class="navi mt-2">
                         <div class="navi-item">
                             <span class="p-0 pb-2">
@@ -41,33 +42,14 @@
                                         <i class="fas fa-envelope text-dark"></i>
                                     </span>
                                 </span>
-                                <span class="navi-text text-muted">jm@softplus.com</span>
+                                <span class="navi-text text-muted" id="user-planel-email"></span>
                             </span>
                         </div>
-                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2">Kijelentkezés</a>
+                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2" onclick="signOut()">Kijelentkezés</a>
                     </div>
                 </div>
             </div>
 
-            <div class="separator separator-dashed mt-8 mb-5"></div>
-
-            <div class="navi navi-spacer-x-0 p-0">
-                <a href="#" class="navi-item">
-                    <div class="navi-link">
-                        <div class="symbol symbol-40 mr-3">
-                            <div class="symbol-label">
-                                    <i class="far fa-id-card user-card"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="navi-text">
-                            <div class="font-weight-bold">Kártyám</div>
-                            <div class="text-muted">Kártya adatok
-                            <span class="label label-light-danger label-inline font-weight-bold">megtekintése</span></div>
-                        </div>
-                    </div>
-                </a>
-            </div>
         <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 616px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div></div></div>
     </div>
 

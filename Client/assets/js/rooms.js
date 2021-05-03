@@ -68,25 +68,19 @@ function hideTopUp(){
 
 //Delete the clicked training room
 function deleteSelectedTrainingRoom(){
-    deleteTrainingRoom(trainingRoomId);
-    location.reload();
+    deleteTrainingRoom(trainingRoomId)
+	setTimeout( ()=>{
+		location.reload();
+	}, 200)
+
 }
 
 //Delete a training room fetch
 function deleteTrainingRoom(id){
-    const data = {
-        id: `${id}`,
-        roomName: `${document.getElementById(`training-room-name-${id}`).innerText}`,
-        IsDeleted: "true",
-    };
 
-    fetch(`http://localhost:5000/TrainingRoom/${id}`, {
-        method: "PUT",
-        mode: "cors",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+	fetch(`http://localhost:5000/TrainingRoom/${id}`, {
+        method: "DELETE",
+        mode: "cors"
     })
 }
 

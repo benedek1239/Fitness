@@ -49,6 +49,11 @@
 
 }
 
+.client-ticket-card{
+    padding: 10px;
+    border: 1.5px solid black;
+}
+
 .custom-card{
     cursor: pointer;
     padding: 10px;

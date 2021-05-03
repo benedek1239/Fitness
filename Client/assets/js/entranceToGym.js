@@ -19,7 +19,7 @@ function chooseTicket(element){
     choosedTicketId = 'test';
 }
 
-//exit from all the form]
+//exit from all the form
 function exitFromTheForm(){
     removeChoosedFromAllCustomCard();
     choosedRoomId = '';

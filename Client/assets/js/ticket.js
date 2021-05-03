@@ -31,10 +31,16 @@ function GetTicketAttributes(){
         });
 }
 
-//Goes back to the tickets (admin)
+//Goes back href depends on the user type (given room id)
 function backToTickets(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const roomId = urlParams.get('roomId');
-    window.location.href = "tickets.html?roomId=" + roomId;
+
+	if(roomId == 'clientSide'){
+		window.location.href = "myTickets.html";
+	}
+	else{
+		window.location.href = "tickets.html?roomId=" + roomId;
+	}
 }

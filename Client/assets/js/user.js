@@ -7,7 +7,8 @@ takeDataToUserPanel();
 function takeDataToUserPanel(){
     document.getElementById('user-planel-name').innerText = userData.userName;
     document.getElementById('user-planel-email').innerText = userData.email;
-    if(userData.type == 'client'){
+    document.getElementById('user-planel-img').src = userData.imageURL;
+    if(userData.type == 'Client'){
         document.getElementById('user-planel-type').innerText = 'Kliens';
     }
     else{

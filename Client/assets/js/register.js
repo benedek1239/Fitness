@@ -25,10 +25,10 @@ function register(){
         //get user type 
         var type = '';
         if(document.getElementById('client-radio').checked){
-            type = 'client';
+            type = 'Client';
         }
         else{
-            type = 'admin'
+            type = 'Admin'
         }
 
 
@@ -43,6 +43,7 @@ function register(){
             barcode: `${document.getElementById("barcode-input").value}`,
             password: `${document.getElementById("password-input").value}`,
             type: `${type}`,
+			imageUrl: `${document.getElementById('profile-picture').src}`,
             comment: '',
         };
 

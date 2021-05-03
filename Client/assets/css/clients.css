@@ -1,3 +1,49 @@
 #new-client-form{
     display: none;
 }
+
+.choosed{
+    filter: drop-shadow(1px 2px 3px black);
+    background: aliceblue
+}
+
+.custom-card:hover{
+    background: aliceblue
+
+}
+
+.client-ticket-card{
+    padding: 10px;
+    border: 1.5px solid black;
+}
+
+.d-inherit{
+	display: inherit;
+}
+
+.custom-card{
+    cursor: pointer;
+    padding: 10px;
+    border: 1.5px solid black;
+}
+
+#choosable-gyms{
+	display: none;
+}
+
+
+#choosable-tickets{
+	display: none;
+}
+
+#back-btn{
+	display: none;
+}
+
+#back-2-btn{
+	display: none;
+}
+
+#next-btn{
+	display: none;
+}

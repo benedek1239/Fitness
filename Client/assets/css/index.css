@@ -127,3 +127,11 @@ body{
 .custom-mg-top{
     margin-top: -15px;
 }
+
+#kt_quick_user {
+    height: 220px;
+}
+
+.wd-40{
+	width: 40px;
+}

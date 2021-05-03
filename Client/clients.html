@@ -12,6 +12,7 @@
     <link href="assets/css/rooms.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/clients.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/register.css" rel="stylesheet" type="text/css"/>
+	<link rel="shortcut icon" type="image/jpg" href="assets/images/logo.jpg"/>
     <title>Fitness</title>
 </head>
 <body>
@@ -28,12 +29,12 @@
 
             <div class="d-flex align-items-center mt-5">
                 <div class="symbol symbol-100 mr-5">
-                    <img class="symbol-label" src="https://theride.info/images/avatars/0.svg"></img>
+                    <img class="symbol-label" id="user-planel-img" src="https://theride.info/images/avatars/0.svg"></img>
                     <i class="symbol-badge bg-success"></i>
                 </div>
                 <div class="d-flex flex-column">
-                    <div class="font-weight-bold font-size-h5 text-dark-75">James Jones</div>
-                    <div class="text-muted mt-1">Kliens/Admin</div>
+                    <div class="font-weight-bold font-size-h5 text-dark-75" id="user-planel-name"></div>
+                    <div class="text-muted mt-1" id="user-planel-type"></div>
                     <div class="navi mt-2">
                         <div class="navi-item">
                             <span class="p-0 pb-2">
@@ -42,46 +43,40 @@
                                         <i class="fas fa-envelope text-dark"></i>
                                     </span>
                                 </span>
-                                <span class="navi-text text-muted">jm@softplus.com</span>
+                                <span class="navi-text text-muted" id="user-planel-email"></span>
                             </span>
                         </div>
-                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2">Kijelentkezés</a>
+                        <a href="#" class="btn btn-sm btn-light-warning font-weight-bolder py-2 px-5 mt-2" onclick="signOut()">Kijelentkezés</a>
                     </div>
                 </div>
             </div>
 
-            <div class="separator separator-dashed mt-8 mb-5"></div>
-
-            <div class="navi navi-spacer-x-0 p-0">
-                <a href="#" class="navi-item">
-                    <div class="navi-link">
-                        <div class="symbol symbol-40 mr-3">
-                            <div class="symbol-label">
-                                    <i class="far fa-id-card user-card"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="navi-text">
-                            <div class="font-weight-bold">Kártyám</div>
-                            <div class="text-muted">Kártya adatok
-                            <span class="label label-light-danger label-inline font-weight-bold">megtekintése</span></div>
-                        </div>
-                    </div>
-                </a>
-            </div>
         <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 616px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div></div></div>
     </div>
 
     <img class="logo" src="assets/images/logo.jpg"/>
 
+	<div class="swal2-container swal2-center swal2-backdrop-hide" id="top-up-back" style="overflow-y: auto;">
+        <div aria-labelledby="swal2-title" aria-describedby="swal2-content" class="swal2-popup swal2-modal swal2-icon-warning swal2-hide" id="top-up" tabindex="-1" role="dialog" aria-live="assertive" aria-modal="true" style="display: flex;">
+            <div class="swal2-header">
+                <div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;">
+                    <div class="swal2-icon-content">!</div>
+                </div>
+                <h2 class="swal2-title" id="swal2-title" style="display: block;">Biztos törlöd a klients?</h2>
+            </div>
+            <div class="swal2-content">
+
+            <div class="swal2-range" style="display: none;">
+                <input type="range"><output></output></div></div><div class="swal2-actions">
+                    <button type="button" class="swal2-cancel swal2-styled" aria-label="" style="display: inline-block;" onclick="hideTopUp()">Mégsem</button>
+                    <button type="button" class="swal2-confirm swal2-styled" aria-label="" style="display: inline-block;" onclick="deleteSelectedClient()">Igen</button><div class="swal2-loader"></div></div><div class="swal2-footer" style="display: none;"></div></div>
+    </div>
 
     <div class="user-inputs pt-3">
         
-        <div id="user-admin">
-            <a class="menu-button mr-6" href="home.html">Főoldal</a>
-            <a class="menu-button mr-6 ml-6" href="rooms.html">Termek</a>
-            <a class="menu-button clicked mr-6 ml-6" href="clients.html">Kliensek</a>
-        </div>
+		<a class="menu-button mr-6" href="home.html">Főoldal</a>
+		<a class="menu-button mr-6 ml-6" href="rooms.html">Termek</a>
+		<a class="menu-button clicked mr-6 ml-6" href="clients.html">Kliensek</a>
 
         <div class="user-dropdown mr-6 mt-1 ml-6" id="kt_quick_user_toggle">
             <i class="fas fa-user user-icon"></i>
@@ -91,6 +86,39 @@
 
     <div class="container">
 
+		        <!-- Modal-->
+				<div class="modal fade" id="exampleModalLong" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="choose-model-title">Kliens bérletei</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="exitFromTheForm()">
+									<i aria-hidden="true" class="ki ki-close"></i>
+								</button>
+							</div>
+							<div class="modal-body">
+								
+								<div id="client-tickets">
+									
+								</div>
+
+								<div id="choosable-gyms">
+
+								</div>
+		
+								<div id="choosable-tickets">
+		
+								</div>
+		
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light-success font-weight-bold" id="add-ticket-btn" onclick="addNewTicket()"><i class="fas fa-plus"></i>Bérlet hozzáadás</button>		
+								<button type="button" class="btn btn-success font-weight-bold" id="next-btn" onclick="roomIsChoosed()">Tovább</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
         <div class="page-title">
             <h1 class="main-title d-inline">Kliensek</h1>
             <button class="btn btn-outline-warning d-inline float-right" id="new-client-btn"><i class="fas fa-plus"></i>Kliens hozzáadása</button>
@@ -99,52 +127,82 @@
             <div class="card mt-6 mb-6" id="new-client-form">
 
                 <div class="card-body">
-                    <form>
                         <div class="card-body">
 
-                        <div class="form-group-2">
-                            <label for="name">Név</label>
-                            <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
-                        </div>
 
-                        <div class="form-group-2">
-                            <label for="email">E-mail cím</label>
-                            <input id="email-input-field" type="email" class="form-control " name="email" value="" autocomplete="off">
-                        </div>
+                            <div class="form-group-2">
+                                <label for="name">Név</label>
+                                <input id="name-input" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>A névnek legalább 5 karakterből kell állnia</strong>
+                                </span>
+                            </div>
+    
+                            <div class="form-group-2">
+                                <label for="email">E-mail cím</label>
+                                <input id="email-input" type="email" class="form-control " name="email" value="" autocomplete="off">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>E-mail cím nem megfelelő</strong>
+                                </span>
+                                    <div class="form-group-2">
+                                        <input class="form-control d-none" id="email-already-used-input">
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>Az e-mail cím már foglalt</strong>
+                                        </span>
+                                    </div>
+                            </div>
 
-                        <div class="form-group-2">
-                            <label for="phone">Telefon szám</label>
-                            <input id="phone-input-field" type="text" class="form-control " name="phone" value="" autocomplete="off">
-                        </div>
+                            <div class="form-group-2">
+                                <label for="phone">Telefon szám</label>
+                                <input id="phone-input" type="text" class="form-control " name="phone" value="" autocomplete="off">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>A telefonszámnak legalább 7 karakterből kell állnia</strong>
+                                </span>
+                            </div>
+    
+                            <div class="form-group-2">
+                                <label for="password">Jelszó</label>
+                                <input id="password-input" type="password" class="form-control " name="password" autocomplete="new-password">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>A jelszónak legalább 5 karakterből kell állnia</strong>
+                                </span>
+                            </div>
+    
+                            <div class="form-group-2">
+                                <label for="password-confirm">Jelszó újra</label>
+                                <input id="password-confirm-input" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>A megadott jelszavak nem eggyeznek</strong>
+                                </span>
+                            </div>
 
-                        <div class="form-group-2">
-                            <label for="password">Jelszó</label>
-                            <input id="password-input-field" type="password" class="form-control " name="password" autocomplete="new-password">
-                        </div>
+							<div class="form-group-2">
+								<label for="cnp">Személyi</label>
+								<input id="cnp-input" type="text" class="form-control " name="cnp" value="" autocomplete="off" autofocus="">
+								<span class="invalid-feedback" role="alert">
+									<strong>A személyinek legalább 5 karakterből kell állnia</strong>
+								</span>
+							</div>
 
-                        <div class="form-group-2">
-                            <label for="password-confirm">Jelszó újra</label>
-                            <input id="password-confirm-input-field" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
-                        </div>
+							<div class="form-group-2">
+								<label for="address">Cím</label>
+								<input id="address-input" type="text" class="form-control " name="address" value="" autocomplete="off" autofocus="">
+								<span class="invalid-feedback" role="alert">
+									<strong>A címnek legalább 7 karakterből kell állnia</strong>
+								</span>
+							</div>
 
-                        <div class="form-group-2">
-                            <label for="name">Személyi</label>
-                            <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
-                        </div>
-
-                        <div class="form-group-2">
-                            <label for="name">Cím</label>
-                            <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
-                        </div>
-
-                        <div class="form-group-2">
-                            <label for="name">Vonalkód</label>
-                            <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
-                        </div>
+							<div class="form-group-2">
+								<label for="barcode">Vonalkód</label>
+								<input id="barcode-input" type="text" class="form-control " name="barcode" value="" autocomplete="off" autofocus="">
+								<span class="invalid-feedback" role="alert">
+									<strong>A vonalkódnak legalább 5 karakterből kell állnia</strong>
+								</span>
+							</div>
 
                         <div class="form-group-2">
                             <label for="name">Megjegyzés</label>
-                            <input id="name" type="text" class="form-control " name="name" value="" autocomplete="off" autofocus="">
+                            <input id="comment-input" type="text" class="form-control " name="comment" value="" autocomplete="off" autofocus="">
                         </div>
 
                          <!--begin::Nav Panel Widget 1-->
@@ -319,25 +377,16 @@
                                 </div>
                                         <!--end::Body-->
                                     </div>
-                                    <div class="d-flex flex-center" id="kt_sticky_toolbar_chat_toggler" data-toggle="tooltip" title="" data-placement="right" data-original-title="Chat Example">
-                                        <label class="btn btn-light-warning font-weight-bold mr-2">
-                                            <span><i class="flaticon-attachment"></i>Kép csatolása</span>
-                                            <input type="file" name="media" id="image-input">
-                                        </label>                                   
-                                    </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="card-footer">
                         <button class="btn btn-secondary little-margined" id="back-to-clients-btn">Vissza</button>
-                        <button id="register-btn" type="submit" class="btn btn-success mr-2">Létrehozás</button>
+                        <button onclick="addNewClient()" class="btn btn-success mr-2" id="add-client-btn">Létrehozás</button>
                     </div>
                     
-                    <input type="text" value="0" name="avatar-counter" id="hidden-avatar-input" hidden="">
-                    
                 </div>
-            </form>
             </div>
         </div>
 
@@ -351,7 +400,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-4 my-2 my-md-0">
                                     <div class="input-icon">
-                                        <input type="text" class="form-control" placeholder="Keresés..." id="kt_datatable_search_query">
+                                        <input type="text" class="form-control" placeholder="Keresés..." id="user-search-input" autocomplete="off">
                                         <span>
                                             <i class="flaticon2-search-1 text-muted"></i>
                                         </span>
@@ -398,96 +447,10 @@
                             </tr>
                         </thead>
 
-                        <tbody class="datatable-body">
+                        <tbody class="datatable-body" id="clients-db">
                             
-                            <tr data-row="0" class="datatable-row" style="left: 0px;">
-                                <td class="datatable-cell datatable-toggle-detail">
-                                    <i class="fa fa-caret-right"></i>
-                                </td>
-                                <td data-field="Név" class="datatable-cell">
-                                    <span style="width: 108px;"></span>Nagy Annamária</span>
-                                </td>
-                                <td data-field="Telefon" class="datatable-cell">
-                                    <span style="width: 100px;">0740395761</span>
-                                </td>
-                                <td data-field="Email" class="datatable-cell">
-                                    <span style="width: 138px;">annamari@gmail.com</span>
-                                </td>
-                                <td data-field="Személyi" aria-label="10/15/2017" class="datatable-cell">
-                                    <span style="width: 108px;">199821574235</span>
-                                </td>
-                                <td data-field="Cím" aria-label="5" class="datatable-cell" style="display: none;">
-                                    <span style="width: 108px;">Bethlen Gábor 16</span>
-                                </td>
-                                <td data-field="Vonalkód" data-autohide-disabled="false" aria-label="1" class="datatable-cell">
-                                    <span style="width: 100px;">#7454</span>
-                                </td>
-                                <th data-field="Megjegyzések" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort">
-                                    <span style="width: 120px;">Sokat jön-megy</span>
-                                </th>
-                                <td data-field="Actions" data-autohide-disabled="false" aria-label="null" class="datatable-cell">
-                                    <span style="overflow: visible; position: relative; width: 125px;">                        
-                                        <div class="dropdown dropdown-inline">      
+        
 
-                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" data-toggle="dropdown">
-                                            <span class="svg-icon svg-icon-md">                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                            <rect x="0" y="0" width="24" height="24"></rect>                                            <path d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z" fill="#000000"></path>                                        </g>                                    
-                                            </svg>                                </span>                            
-                                        </a>                            
-                            
-                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">
-                                            <span class="svg-icon svg-icon-md">                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                        <rect x="0" y="0" width="24" height="24"></rect>                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "></path>                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"></rect>                                    </g>                                </svg>                            </span>                        
-                                        </a> 
-
-                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">
-                                            <span class="svg-icon svg-icon-md">                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                        <rect x="0" y="0" width="24" height="24"></rect>                                        <path d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z" fill="#000000" fill-rule="nonzero"></path>                                        <path d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"></path>                                    </g>                                </svg>                            </span>                        
-                                        </a>
-                                    </span>
-                                </td>
-                            </tr>
-
-                            <tr data-row="1" class="datatable-row" style="left: 0px;">
-                                <td class="datatable-cell datatable-toggle-detail">
-                                    <i class="fa fa-caret-right"></i>
-                                </td>
-                                <td data-field="Név" class="datatable-cell">
-                                    <span style="width: 108px;"></span>Nagy Annamária</span>
-                                </td>
-                                <td data-field="Telefon" class="datatable-cell">
-                                    <span style="width: 100px;">0740395761</span>
-                                </td>
-                                <td data-field="Email" class="datatable-cell">
-                                    <span style="width: 138px;">annamari@gmail.com</span>
-                                </td>
-                                <td data-field="Személyi" aria-label="10/15/2017" class="datatable-cell">
-                                    <span style="width: 108px;">199821574235</span>
-                                </td>
-                                <td data-field="Cím" aria-label="5" class="datatable-cell" style="display: none;">
-                                    <span style="width: 108px;">Bethlen Gábor 16</span>
-                                </td>
-                                <td data-field="Vonalkód" data-autohide-disabled="false" aria-label="1" class="datatable-cell">
-                                    <span style="width: 100px;">#7454</span>
-                                </td>
-                                <th data-field="Megjegyzések" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort">
-                                    <span style="width: 120px;">Sokat jön-megy</span>
-                                </th>
-                                <td data-field="Actions" data-autohide-disabled="false" aria-label="null" class="datatable-cell">
-                                    <span style="overflow: visible; position: relative; width: 125px;">                        
-                                        <div class="dropdown dropdown-inline">                            
-                                            <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" data-toggle="dropdown">
-                                                <span class="svg-icon svg-icon-md">                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                            <rect x="0" y="0" width="24" height="24"></rect>                                            <path d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z" fill="#000000"></path>                                        </g>                                    
-                                                </svg>                                </span>                            
-                                            </a>                            
-                            
-                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">
-                                            <span class="svg-icon svg-icon-md">                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                        <rect x="0" y="0" width="24" height="24"></rect>                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "></path>                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"></rect>                                    </g>                                </svg>                            </span>                        
-                                        </a> 
-
-                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">
-                                            <span class="svg-icon svg-icon-md">                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">                                        <rect x="0" y="0" width="24" height="24"></rect>                                        <path d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z" fill="#000000" fill-rule="nonzero"></path>                                        <path d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"></path>                                    </g>                                </svg>                            </span>                        
-                                        </a>
-                                    </span>
-                                </td>
-                            </tr>
                             
                         </tbody>
 
