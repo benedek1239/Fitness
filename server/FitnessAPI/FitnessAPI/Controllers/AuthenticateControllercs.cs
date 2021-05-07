@@ -43,7 +43,7 @@ namespace FitnessAPI.Controllers
                 return Unauthorized();
             }
 
-            var result = new Result { Token = token, Id = resultUser[0].Id, Email = resultUser[0].UserEmail, UserName = resultUser[0].UserName, Type = resultUser[0].Type };
+            var result = new Result { Token = token, Id = resultUser[0].Id, Email = resultUser[0].UserEmail, UserName = resultUser[0].UserName, ImageURL = resultUser[0].ImageURL, Type = resultUser[0].Type };
 
             return Ok(result);
 
@@ -68,7 +68,7 @@ namespace FitnessAPI.Controllers
                 return Unauthorized();
             }
 
-            var result = new Result { Token = token, Id = registerModel.Id, Email = registerModel.UserEmail, UserName = registerModel.UserName, Type = registerModel.Type };
+            var result = new Result { Token = token, Id = registerModel.Id, Email = registerModel.UserEmail, UserName = registerModel.UserName, ImageURL = registerModel.ImageURL, Type = registerModel.Type };
 
             return Ok(result);
 

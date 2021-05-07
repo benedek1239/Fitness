@@ -15,6 +15,7 @@ namespace FitnessAPI.Models
         public int PhoneNumber { get; set; }
 
         public string UserEmail { get; set; }
+        public string ImageURL { get; set; }
 
         public string IsDeleted { get; set; }
 

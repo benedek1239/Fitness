@@ -37,6 +37,17 @@ namespace FitnessAPI.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{userId}/{roomId}")]
+        public IActionResult GetTrainingRoomMemberShips(string userId, string roomId)
+        {
+            var result = _clientMembership.Find(el => el.ClientId == userId && el.RoomId == roomId).ToList();
+            if (result.Count < 0)
+            {
+                return StatusCode(404, new Response { Status = "Not Found", Message = "Client Membership not found in that room or fice versa" });
+            }
+            return Ok(result);
+        }
+
         // POST api/<ClientMembershipController>
         [HttpPost]
         public IActionResult Post([FromBody] ClientMemberships value)

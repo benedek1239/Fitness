@@ -35,8 +35,9 @@ namespace FitnessAPI.Controllers
 
         }
 
-        [HttpGet("{roomId}/{isAdmin}")]
-        public IEnumerable<MemberShip> Get(string roomId, bool isAdmin)
+        [HttpGet]
+        [Route("admin/{roomId}")]
+        public IEnumerable<MemberShip> GetAdmin(string roomId)
         {
             var idk = _membership.Find(el => el.RoomId == roomId && el.IsDeleted == "false").ToList();
             return idk;

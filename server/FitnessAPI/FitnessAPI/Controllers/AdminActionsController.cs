@@ -30,21 +30,30 @@ namespace FitnessAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var result = _user.Find(el => el.IsDeleted == "false" && el.Type == "Client").ToList();
+            var result = _user.Find(el => el.IsDeleted == "false" && el.Type == "client").ToList();
             if(result.Count <= 0)
             {
                 return StatusCode(404, new Response { Status = "Error", Message = "No such data in the DB" });
             }
-            var respone = new UserGetterModel
+            //ird at forra mert tobb kliens lehet
+            List<UserGetterModel> responses = new List<UserGetterModel>();
+
+            for(int i=0; i < result.Count; ++i)
             {
-                Id = result[0].Id,
-                UserName = result[0].UserName,
-                Email = result[0].UserEmail,
-                PhoneNumber = result[0].PhoneNumber,
-                Type = result[0].Type,
-                IsDeleted = result[0].IsDeleted
-            };
-            return Ok(respone);
+                var respone = new UserGetterModel
+                {
+                    Id = result[i].Id,
+                    UserName = result[i].UserName,
+                    Email = result[i].UserEmail,
+                    PhoneNumber = result[i].PhoneNumber,
+                    Type = result[i].Type,
+                    IsDeleted = result[i].IsDeleted
+                };
+
+                responses.Add(respone);
+            }
+
+            return Ok(responses);
         }
 
         // POST api/<AdminActionsController>

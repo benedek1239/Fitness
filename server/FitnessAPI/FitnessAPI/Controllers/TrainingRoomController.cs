@@ -10,7 +10,7 @@ namespace FitnessAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TrainingRoomController: ControllerBase
+    public class TrainingRoomController : ControllerBase
     {
         private IMongoCollection<TrainingRoom> _trainingRoomColletion;
         private IMongoCollection<ClientMemberships> _clientMemship;
