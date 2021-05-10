@@ -563,7 +563,6 @@ function loadClientTickets(){
 
 		//need to wait a little for the data
 		setTimeout( ()=>{
-			console.log(roomNameShower);
 			for(i = length - 1; i >= 0; i--){
 				//create the new clientTicket dic on the HTML
 				var clientTicket = document.createElement("div");
@@ -576,7 +575,7 @@ function loadClientTickets(){
 				</h2>`;
 				document.getElementById('client-tickets').appendChild(clientTicket);
 			}
-		}, 180);
+		}, 300);
 	});
 }
 

@@ -68,9 +68,6 @@
     width: 65px;
 }
 
-#choosable-tickets{
-    display: none;
-}
 
 #ending-form{
     display: none;
@@ -82,4 +79,27 @@
 
 #back-2-btn{
     display: none;
+}
+
+.client-ticket-card{
+    padding: 10px;
+    border: 1.5px solid black;
+}
+
+.d-inherit{
+	display: inherit;
+}
+
+.client-membership-img{
+	height: 79px;
+    margin-top: 11px;
+    width: 73px;
+}
+
+#top-up-back{
+	z-index: -1;
+}
+
+#top-up-back-2{
+	z-index: -1;
 }

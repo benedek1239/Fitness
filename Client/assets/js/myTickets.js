@@ -10,6 +10,7 @@ function loadclientTickets(){
 	roomNameShower = [];
 	ticketNameShower = [];
 	ticketIdShower = [];
+	entriesShower = [];
 	length = 0;
 
 	//get the data and take it to the HTML
@@ -21,7 +22,8 @@ function loadclientTickets(){
 		for(i = clientMembership.length - 1; i >= 0; i--){
 			//store the length for the second loop through
 			length = clientMembership.length;
-
+			//get the entries number of the clientmembership
+			entriesShower.push(clientMembership[i].entered);
 			//get the ticket name
 			fetch(`http://localhost:5000/MemberShip/${clientMembership[i].memberShipId}`)
 			.then((response) => 
@@ -61,10 +63,11 @@ function loadclientTickets(){
 									<div class="card-body">
 										<h4><p class="d-inline font-weight-bolder">Bérlet:</p> ${ticketNameShower[i]}</h3>
 										<h4><p class="d-inline font-weight-bolder">Terem:</p> ${roomNameShower[i]}</h3>
+										<h4><p class="d-inline font-weight-bolder">Eddigi belépések:</p> ${entriesShower[i]}</h3>
 									</div>`;
 				document.getElementById('client-tickets').appendChild(clientTicket);
 			}
-		}, 180);
+		}, 300);
 	});
 
 }
